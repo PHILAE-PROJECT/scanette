@@ -19,17 +19,17 @@ Pour tester l'utilisation de la scanette, vous pouvez lancer le simulateur en mo
 
 Le simulateur est accessible via l'adresse : [https://fdadeau.github.io/scanette/](https://fdadeau.github.io/scanette/)
 
-Une simulation automatique dans laquelle l'apparition et le contrôle des personnages se fait automatiquement est disponible à l'adresse [https://fdadeau.github.io/scanette/?simu](https://fdadeau.github.io/scanette/?simu) et permet de générer des traces d'usages réalistes (dans la limite du modèle d'usage qu'elle implémente). En substance : le personnage arrive avec une liste de coureses, il parcourt les rayons pour ajouter les articles à son panier puis se présente en caisse pour faire son paiement, après éventuelle relecture. Certains comportements aléatoires ont été implémentés comme la possibilité d'oublier de scanner un produit, la possibilité de reposer un produit qui ne lui plait plus (potentiellement en oubliant de le supprimer de la scanette), refaire un tour dans le magasin si aucune caisse n'est libre, abandonner ses achats en plein milieu, etc. 
+Une simulation automatique dans laquelle l'apparition et le contrôle des personnages se fait automatiquement est disponible à l'adresse [https://fdadeau.github.io/scanette/?simu](https://fdadeau.github.io/scanette/?simu) et permet de générer des traces d'usages réalistes (dans la limite du modèle d'usage qu'elle implémente). En substance : le personnage arrive avec une liste de courses, il parcourt les rayons pour ajouter les articles à son panier puis se présente en caisse pour faire son paiement, après éventuelle relecture. Certains comportements aléatoires ont été implémentés comme la possibilité d'oublier de scanner un produit, la possibilité de reposer un produit qui ne lui plait plus (potentiellement en oubliant de le supprimer de la scanette), refaire un tour dans le magasin si aucune caisse n'est libre, abandonner ses achats en plein milieu, etc. 
 
 Les traces sont disponibles en ouvrant la console (outils développeurs du navigateur), puis en sélectionnant l'origine des messages :
 . ihm_simu.js affiche un log verbeux décrivant en français les actions des personnages
 . scanette.js affiche un log des appels aux opérations de l'API de la scanette et de la caisse, dans un format paramétrable
 
 Les traces des API peuvent être affichées/exportées dans un format spécifique pour faciliter le parsing. Me demander.  
-Formats existants (accessibles en complétant l'url précédente par &for=format_demandé)
+Formats existants (accessibles en complétant l'url précédente par &for=format_demandé). Les formats existants sont les suivants (remplacez "format_demandé" par les mots-clés ci-dessous pour avoir le format de log correspondant) dans la console :
 - "fred" : format json `{ "obj": "scan1", "operation": "debloquer", "parametres": [], "timestamp": "134567827654", "result": "0"}`
 - "lydie" : format csv `scan1, scanner, [8718309259938], 0, 1553593229207;`
-- par défaut, format : `1553593429994: scan2.debloquer() -> 0`
+- par défaut : `1553593429994: scan2.debloquer() -> 0`
 
 
 ## Il resterait à faire...
