@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Outils pour la Programmation | Système étudié</title>
+    <style>
+body {
+    font-family: Helevetica, Palatino, Verdana;
+    font-size: 16px;
+    background-color: #D0D0D0;
+    line-height: 1.5;
+}
+
+#bcPage {
+    background-color: #FFF;
+    width: 80%;
+    margin: 0px auto;
+    padding: 15px;
+    border: solid 2px #000;
+}
+
+.figure {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 800px;
+}
+
+h1 {
+    margin: -15px -15px 10px -15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #7777FF;
+    border-bottom: solid 2px #000;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 2px 2px 0.2em black;
+}
+
+h2 {
+	color: #333;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 30px 0px 20px 0px;
+	background: #F7E0A5;
+	padding: 4px;
+	clear: both;
+	border-left: 2em solid #F7C749;
+	}
+h3 {
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #FFCC33;
+}
+
+p {
+    clear: both;
+    text-align: justify;
+}
+
+li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+pre {
+    font-size: 14px;
+}
+
+code {
+    font-size: 95%;
+    color: #BB0000;
+    font-weight: bold;
+}
+
+a:link,
+a:visited,
+label {
+    text-decoration: none;
+    color: #0000FF;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0000FF;
+}
+
+a[href^="http"]:hover::after {
+    content: " - " attr(href);
+}
+
+.important {
+    color: #BB0000;
+    border: solid 1px #BB0000;
+    margin: 10px 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.grammaire {
+    width: 420px;
+    margin-bottom: 10px;
+}
+
+.grammaire td:first-of-type {
+    text-align: right;
+}
+
+.grammaire td:nth-of-type(2) {
+    text-align: center;
+}
+
+.terminal {
+    background-color: black;
+    font-family: courier new;
+    font-size: 14px;
+    color: lightgreen;
+    padding: 5px;
+    text-align: left;
+    width: 60%;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+    width: auto;
+    display: block;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input[type=checkbox] + p.terminal {
+    display: none;
+}
+
+input[type=checkbox]:checked + p.terminal {
+    display: block;
+}
+
+.codesource {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em auto;
+    border: solid 1px #000;
+    padding: 10px;
+    font-size: 90%;
+    max-width: 800px;
+}
+
+.codesource b {
+    color: blue;
+}
+
+.comments {
+    color: green;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div id="bcPage">
+
+        <h1>Etude de cas - Système de scanettes</h1>
+
+        <p>On propose d'étudier un système de <em>scanettes</em> qui permet aux clients des supermarchés de scanner eux-mêmes leurs achats au fur et à mesure de leur visite, et leur permet de passer dans des caisses spécialisées pour le paiement. </p>
+        
+        <img src="images/scan_achat.jpg" class="figure" alt="Scan d'un produit" style="max-width: 600px;">
+
+        <h2>Description du système considéré</h2>
+
+        
+        <p style="clear: none;">        
+            <img src="images/rack_scanettes.jpg" alt="Rack de scanettes" style="width: 20%; float: right; margin-left: 10px;">
+Le processus est le suivant. Le client s'authentifie auprès du système de distribution des scanettes, en donnant son numéro de client, scanné via sa carte de fidélité. Si le numéro est correct, le système lui délivre alors une scannette qui est prête pour enregistrer ses achats. A chaque produit pris dans un rayon par le client, ce dernier doit systématiquement scanner le code barre, ce qui enregistre l'article dans la scannette. Celle-ci affiche toujours sur son écran de contrôle un récapitulatif des produits scannés sous forme compacte, c'est-à-dire le libellé du produit et la quantité correspondante. En cas d'erreur, il est possible de retirer des produits, en appuyant sur la touche "supprimer" et en scannant le produit à supprimer. La suppression, tout comme l'ajout, se fait donc un produit à la fois. Une fois ses courses terminées, le client se présente à une caisse de paiement automatique dédiée au traitement des scanettes. </p>
+
+        <p style="clear: none;">
+            <img src="images/caisse.png" alt="Caisses spéciales pour les scanettes" style="width: 20%; float: left; margin-right: 10px;">
+
+            Pour valider le traitement les achats, le client scanne alors un code-barre spécial affiché sur la caisse. Ceci déclenche le transfert des informations à la caisse sélectionnée. Si un produit scanné n'a pas été reconnu durant les courses, l'information est retenue dans la scanette et, au moment de la validation des achats, un caissier sera sollicité pour scanner lui-même directement sur la caisse les produits non reconnus. Similairement, il est possible que les codes-barres soient sur une surface trop déformée pour être scannée. La caisse demandera donc systématiquement au client s'il a pu scanner tous ses articles. Si ce n'est pas le cas, un caissier saisira manuellement les codes-barres qui n'ont pas pu être scannés. </p>
+
+        <img src="images/caissiers.jpg" alt="Des caissier.e.s ravi.e.s" style="width: 20%; float: right; margin-left: 10px;">
+
+        <p style="clear: none;">Aléatoirement, il est possible qu'une vérification du panier soit réalisée pour "tester" l'honnêteté du client. Un caissier est alors amené à faire la vérification. Ce dernier re-scannera alors, à l'aide de la scanette, un certain nombre de produits (maximum une douzaine) issus du caddie du client. Si cette vérification montre qu'un produit du caddie n'a pas été scanné, alors tout le caddie sera rescanné par le caissier sur une caisse dédiée, ce qui annulera la transaction en cours avec la caisse automatique. Si la vérification
+        n'a décelé aucune erreur, le caissier scannera à nouveau le code barre de la caisse pour valider la phase de vérification. </p>
+
+        <p style="clear: none;">Une fois les achats validés, le client procède au paiement. Il choisit son mode de paiement (carte bleue ou espèces) et réalise classiquement son paiement : soit il insère sa carte dans le lecteur et tape son code, soit il insère la somme en numéraire dans la caisse et celle-ci lui rendra éventuellement la monnaie, si c'est nécessaire. Une fois ce processus terminé, il peut s'en aller avec ses achats.</p>
+
+
+
+        <h2>Description du modèle de données</h2>
+
+
+        <p>Nous présentons ici une description du modèle de données qui sera à réaliser au fil des TP. </p>
+
+        <p>Le diagramme de classes considéré sera le suivant. </p>
+
+        <img src="images/DiagrammeClasse.png" class="figure" alt="Diagramme de classe du système" style="max-width: 800px;">
+
+
+        <p>Le modèle de données est relativement intuitif. </p>
+        <ul>
+            <li>La classe <b>Article</b> permet de décrire les articles qui sont composés d'un
+                <a href="https://fr.wikipedia.org/wiki/EAN_13" target="_blank">code EAN13</a>, d'un nom et d'un prix unitaire. </li>
+            <li>La classe <b>ArticleDB</b> représente une base de données d'articles qui correspond à l'ensemble des produits enregistrés en magasin. Elle présente des méthodes de consultation de cette collection d'éléments. </li>
+            <li>La classe <b>Caisse</b> représente la caisse automatique auprès de laquelle le client peut effectuer son paiement une fois ses achats effectués. </li>
+            <li>La classe <b>Scanette</b> représente la scanette en elle-même qui offre la possibilité de gérer le panier de l'utilisateur (ajouter, supprimer des articles), de transférer le panier à la caisse, ou de réaliser une relecture de contrôle. </li>
+        </ul>
+
+        
+        <h2>Spécification des différentes classes</h2>
+        
+        <h3>La classe <code>Article</code></h3>
+        
+         <p>Les méthodes proposées par la classe <code>Article</code> sont les suivantes : </p>
+            <ul>
+                <li> <code>Article(long, double, String)</code> est un constructeur qui permet d'instancier un article en lui passant en paramètre respectivement son code EAN13 (<code>long</code>), son prix unitaire (<code>double</code>) et son nom (<code>String</code>), </li>
+                <li><code>String getNom()</code> permet de consulter le nom de l'article, </li>
+                <li><code>double getPrixUnitaire()</code> permet de consulter le prix unitaire de l'article, </li>
+                <li><code>long getEAN13()</code> permet de consulter le code EAN13 l'article,</li>
+                <li><code>boolean isValidEAN13()</code> permet de tester si le <a href="https://fr.wikipedia.org/wiki/EAN_13#Calcul_de_la_cl%C3%A9_de_contr%C3%B4le_EAN_13" target="_blank">code 
+            EAN13</a> de l'article est valide, </li>
+                <li><code> boolean equals(Object)</code> permet de vérifier l'égalité entre l'article courant et l'objet passé en 
+                    paramètre. On considèrera que deux articles sont égaux s'ils ont le même code EAN13. </li>
+            </ul>
+        
+        
+        <h3>La classe <code>ArticleDB</code></h3>
+        
+        <p>Cette classe utilise la classe <code>Article</code> en permettant la gestion (initialisation, consultation) 
+    d'une "base de données" contenant les références des articles présents en magasin. </p>
+
+<p>Les méthodes proposées par la classe <code>ArticleDB</code> sont les suivantes : </p>
+<ul>
+    <li><code>ArticleDB()</code> est le constructeur de la classe, </li>
+    <li><code>void init(String)</code> permet d'initialiser la base de données des articles avec un
+        <a href="https://fr.wikipedia.org/wiki/Comma-separated_values" target="_blank">fichier CSV</a>. Ce fichier contiendra un article par ligne, en précisant pour celui-ci, 
+        le code EAN13, suivi du prix unitaire, suivi du nom de l'article. Seules ces 3 informations devront être présentes, 
+        non vides et valides (code EAN correct, prix unitaire positif, nom renseigné), sur chaque ligne. Si le format n'est 
+        pas respecté, une exception <code>FileFormatException</code> (à définir par vos soins) devra être déclenchée et aucun article ne 
+        devra apparaître dans la base (celle-ci ne sera initialisée que si le fichier CSV a pu être lu dans son intégralité 
+        et que les données contenues sont toutes valides). S'il y a une erreur liée à la lecture du fichier une 
+        <code>IOException</code> (native en Java) sera déclenchée. <br>
+        Pour vous faciliter la tâche, vous pouvez partir de <a href="ressources/produits.csv">ce fichier</a> qui propose une vingtaine 
+        de références correctement formatées. </li>
+    <!-- TO DO : préciser que la chaîne représente le chemin vers le fichier et pas le fichier itself -->
+    <li><code>int getTailleDB()</code> renvoie la taille de la base de données.</li>
+    <li><code>Article getArticle(long)</code> permet de renvoyer l'article dont le code EAN13 est donné en paramètre. 
+    Si l'article n'existe pas dans la base, une exception <code>ArticleNotFoundException</code> (à définir par vos soins) devra être déclenchée. </li>
+    <!-- TO DO : au lieu d'une exception, renvoyer null si l'article n'existe pas ? -->
+</ul>
+   
+        
+        <h3>La classe <code>Scanette</code> </h3>
+    
+<p style="clear: none;">Les méthodes de le classe <code>Scanette</code> sont les suivantes : </p>
+    
+<ul style="clear: none;">
+    <li><code>Scanette(String)</code>, qui est le constructeur de la classe. Celui-ci prend en paramètre une
+        chaîne de caractères représentant un chemin vers un fichier initialisant la base de données des articles 
+        à laquelle la scanette se référera. Si le fichier n'existe pas ou s'il n'est pas correctement formatté, 
+        ce constructeur devra déclencher une exception <code>ProductDBFailureException</code> (que vous aurez 
+        également à créer). </li>
+    <li><code>int debloquer()</code>, qui permet de débloquer la scanette. Si la scanette n'est pas bloquée, 
+        cette méthode renverra le code de retour <code>-1</code>, sinon elle renverra le code de retour 
+        <code>0</code>. </li>
+    <li><code>int scanner(long)</code>, qui permet de scanner un article dont le code EAN13 est passé en paramètre.
+        Cette méthode est utilisée soit pour ajouter un article dans le panier du client, soit pour effectuer
+        une relecture si celle-ci est nécessaire. Si l'appel à cette méthode est réalisé alors que la scanette 
+        n'est pas dans le bon état (par exemple parce qu'elle est bloquée) la méthode renverra le code <code>-1</code>. 
+        Si le code EAN13 en paramètre n'est pas reconnu durant les courses, la méthode renverra le code de 
+        retour <code>-2</code> indiquant 
+        cette erreur. Si la scanette était en cours de relecture et que l'article scanné n'est pas dans le panier 
+        du client, la méthode renverra le code <code>-3</code>. Sinon, elle renverra le code de retour <code>0</code> pour 
+        indiquer que l'article a bien été reconnu et que le traitement approprié a bien été réalisé. </li>
+    <li><code>int supprimer(long)</code>, qui permet de retirer un article du panier. Si la scanette n'était pas dans
+        l'état "en courses", la méthode reverra le code de retour<code>-1</code>. Si le code EAN13 passé en paramètre
+        n'appartenait pas au panier du client, le code de retour <code>-2</code> sera renvoyé. Sinon, 
+        la méthode retournera <code>0</code> pour indiquer qu'une instance de l'article a bien été supprimée 
+        du panier. </li>
+    <li><code>int quantite(long)</code>, qui permet de connaître, pour le panier actuel, le nombre d'occurrences 
+        d'un article dont le code EAN13 est passé en paramètre. </li>
+    <li><code>void abandon()</code>, qui permet d'annuler toute transaction en cours et de re-bloquer la scanette. </li>
+    <li><code>Set&lt;Article&gt; getArticles()</code> qui permet d'obtenir, quel que soit l'état de la scanette, 
+        l'ensemble des articles présents dans le panier du client. Lorsque la scanette est bloquée, cette méthode 
+        renvoie un ensemble vide. </li>
+    <li><code>Set&lt;Long&gt; getReferencesInconnues()</code> qui permet d'obtenir, quel que soit l'état de la scanette, 
+        l'ensemble des codes EAN non reconnus par la scanette durant les courses. Lorsque la scanette est bloquée, 
+        cette méthode renvoie un ensemble vide. </li>
+    <li><code>int transmission(Caisse)</code>, qui permet de transmettre les informations de la scanette à la caisse. 
+    Si le client a terminé ses achats et qu'au moment de la connexion avec la caisse celle-ci impose une relecture de
+        contrôle, la scanette passe en mode "relecture" et la méthode retourne le code <code>1</code>. Si aucune 
+        relecture n'est demandée, ou si la relecture a été effectuée avec succès et a été transmise à la caisse, 
+        la méthode retournera la valeur <code>0</code> et la scanette se re-bloquera en attendant le prochain client. 
+        Dans tous les autres cas, la méthode doit renvoyer <code>-1</code> pour signaler une erreur. 
+    </li>
+</ul>
+
+<p>La scanette passe donc par différents états successifs, dont les enchaînements peuvent se synthétiser par le
+    diagramme d'états-transitions ci-dessous. </p>
+        
+    <img src="images/Statecharts-scanette.png" class="figure" style="margin-bottom: 30px; max-width: 900px; width: 90%;">    
+        
+        
+        <h3>La classe <code>Caisse</code> </h3>
+
+        <p>Les méthodes proposées par un objet de type <code>Caisse</code> sont les suivantes : </p>
+        <ul>
+            <li>Un unique constructeur de la classe qui prend en paramètre une chaîne de caractères. Celle-ci représente un chemin 
+                relatif vers un fichier initialisant la base de données des articles connus de la caisse. Si le fichier n'existe pas 
+                ou s'il n'est pas correctement formaté, ce constructeur devra déclencher une exception <code>ProductDBFailureException</code>
+                (que vous avez normalement déjà créé précédemment). </li>
+            <li><code>int connexion(Scanette)</code>, qui permet de réaliser la connexion d'une scanette à la caisse. La spécification 
+                de cette méthode est la même que celle donnée dans le sujet de TP précédent. Cette méthode peut être invoquée par la 
+                scanette : <br> - pour marquer la fin des courses. Dans cette situation, la méthode pourra décider, dans 10% des cas, 
+                de demander d'effectuer une relecture en renvoyant la valeur <code>1</code>. Si aucune relecture n'est décidée, elle 
+                se mettra en attente de paiement, sauf si des articles n'ont pas été reconnus lors des courses ; (dans ce cas, la caisse 
+                sera en attente d'authentification d'un caisser qui prendra le relais pour interroger le client et rescanner manuellement 
+                les éventuels articles manquants, ou même d'autres articles -- on précisera qu'il n'est pas obligatoire qu'un article non
+                reconnu soit scanné sur la caisse, le client ayant pu le reposer voyant qu'il ne passait pas sur la scanette). La méthode
+                renverra tout de même, dans les deux cas, la valeur <code>0</code> pour signaler à la scanette que les achats ont bien été
+                transmis, et qu'elle a terminé sa mission.
+                <br> - suite à une relecture qui a été effectuée avec succès. Dans ce cas, le comportement sera celui décrit ci-dessus
+                lorsqu'aucune relecure n'était décidée. <br> Cas particulier : si la scanette contacte la caisse avec un panier vide, elle
+                n'aura quoi qu'il arrive aucune relecture à effectuer. Néanmoins, elle se mettra en attente de l'authentification d'un 
+                caisser (comme dans le cas d'articles inconnus sur la scanette) pour venir contrôler ce panier vide qui semble suspect.
+                <br> Si cette méthode est appelée depuis un état incorrect, elle renvoie le code d'erreur <code>-1</code>.
+            </li>
+            <li><code>boolean demandeRelecture()</code> est une fonction utilitaire (appelée depuis la méthode
+                <code>connexion</code> précédente) et utilisée pour décider si une relecture doit être effectuée ou pas.
+            </li>
+            <li><code>double payer(double)</code>, qui permet d'effectuer le paiement. La valeur renvoyée correspond à l'éventuel rendu 
+                monnaie. Une valeur de retour strictement négative indiquera une erreur liée à l'appel de cette méthode alors que la 
+                caisse n'attendait pas de paiement, ou une erreur liée à une tentative de paiement avec un montant insuffisant. </li>
+            <li><code>void abandon()</code>, qui permet d'abandonner toute transaction en cours avec la caisse, et de la replacer dans 
+                un état où elle attend la connexion de la scanette.
+            </li>
+            <li><code>int ouvrirSession()</code>, qui permet à un caissier d'ouvrir une session sur la caisse en vue de pouvoir scanner 
+                des articles ou en supprimer de la liste d'achats du client. La session ne peut être ouverte que si un panier a été transmis 
+                à la caisse et que celle-ci est en attente de paiement ou de saisie d'un article non-reconnu. Si la session a été ouverte, 
+                la méthode renvoie le code <code>0</code>, sinon elle renvoie le code <code>-1</code>. </li>
+            <li><code>int fermerSession()</code>, qui permet de fermer la session ouverte précédemment. Cette opération ne peut s'effectuer 
+                avec succès que si une session était actuellement ouverte. Si la fermeture de session réussit, la méthode renvoie le code
+                <code>0</code>, sinon elle renvoie le code <code>-1</code>. </li>
+            <li><code>int scanner(long)</code>, qui permet à un caissier préalablement authentifié de scanner un article pour l'ajouter 
+                aux achats du client. Le paramètre représente le code EAN13 qui est scanné par l'appareil. Si cette méthode est appelée 
+                alors que la caisse est dans le mauvais état, alors la méthode renverra -1. Si ce code n'est pas reconnu, la méthode 
+                renverra le code de retour <code>-2</code> indiquant une erreur. Sinon, elle renverra le code de retour <code>0</code> 
+                pour indiquer que l'article a bien été reconnu et qu'il est ajouté aux achats du client. </li>
+            <li><code>int supprimer(long)</code>, qui permet à un caisser préalablement authentifié de retirer un article de la liste 
+                des achats. Si la méthode est invoquée depuis le mauvais état, elle renverra le code <code>-1</code>. Si le code passé 
+                en paramètre n'appartenait pas aux achats du client, le code de retour <code>-2</code> sera renvoyé. Sinon, la méthode
+                retournera <code>0</code> pour indiquer qu'une instance de l'article a bien été supprimée du panier. </li>
+        </ul>
+
+        <p>Cas particulier : il n'est pas possible de demander à un client de payer une somme d'argent nulle. Si, après contrôle par le 
+            caisser, la liste d'achats du client est vide, alors la caisse ne demande pas de paiement et se remet en attente d'une 
+            prochaine connexion de la scanette. </p>
+
+        <p>Comme pour la scanette, la caisse possède plusieurs états. Le diagramme d'états-transitions suivant symbolise ces états et le passage de l'un à l'autre. </p>
+
+        <img src="images/Statecharts-caisse.png" class="figure" style="max-width: 1050px; width: 95%;">
+
+
+        
+    </div>
+
+</body>
+
+</html>
