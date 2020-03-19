@@ -39,7 +39,13 @@ Il y a dans le dossier un certain nombre d'implantations mutantes. Je ne garanti
 
 Pour lancer le rejeu des traces sur un mutant particulier (par exemple scanette-mu42.jar) : 
 
-> `java -cp ScanetteTestReplay.jar:scanette-mu42.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
+> `java -cp ScanetteTestReplay.jar:json-simple.jar:junit-4.12.jar:scanette-mu42.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
+
+sous Linux/MacOS et 
+
+> `java -cp ScanetteTestReplay.jar;json-simple.jar;junit-4.12.jar;scanette-mu42.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
+
+sous Windows. 
 
 On change juste le fichier JAR de la scanette dans le classpath, le reste est inchangé (donc on passe aussi bien du JSON que du CSV si vous avez bien tout suivi).
 
