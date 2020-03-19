@@ -8,13 +8,22 @@ Le programme est écrit en Java (nécessite Java 8 ou supérieur pour fonctionne
 
 Suivant que vous utilisez le format CSV ou le forma JSON de Agilkia, vous utilisez les lignes de commande :
 
-> `java -cp ScanetteTestReplay.jar:scanette.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
+> `java -cp ScanetteTestReplay.jar:json-simple.jar:junit-4.12.jar:scanette.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
 
 ou 
 
-> `java -cp ScanetteTestReplay.jar:scanette.jar fr.philae.ScanetteTraceExecutor ficherJSON.json`
+> `java -cp ScanetteTestReplay.jar:json-simple.jar:junit-4.12.jar:scanette.jar fr.philae.ScanetteTraceExecutor ficherJSON.json`
 
 en remplaçant le dernier paramètre sur la ligne. Le programme regarde en fonction de l'extension du fichier pour déterminer quel parseur appeler. 
+
+Attention, sous windows, le séparateur pour le classpath n'est pas : mais ; les lignes de commandes deviennent : 
+
+> `java -cp ScanetteTestReplay.jar;json-simple.jar;junit-4.12.jar;scanette.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
+
+ou 
+
+> `java -cp ScanetteTestReplay.jar;json-simple.jar;junit-4.12.jar;scanette.jar fr.philae.ScanetteTraceExecutor ficherJSON.json`
+
 
 A noter que le rejeu s'arrête lorsqu'un scénario échoue. Comme dans les traces extraites du simulateur, il n'est pas nécessaire que les appels soient distincts entre les sessions utilisateurs (celles-ci peuvent donc être entremêlées). 
 
