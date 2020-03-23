@@ -6,6 +6,8 @@ Le programme est écrit en Java (nécessite Java 8 ou supérieur pour fonctionne
 
 # Jouer les tests sur l'implem de référence
 
+La commande Java doit être exécutée dans le répertoire où se situe le répertoire "ressources".
+
 Suivant que vous utilisez le format CSV ou le forma JSON de Agilkia, vous utilisez les lignes de commande :
 
 > `java -cp ScanetteTestReplay.jar:json-simple.jar:junit-4.12.jar:scanette.jar fr.philae.ScanetteTraceExecutor fichierCSV.csv`
