@@ -1,18 +1,14 @@
-/**
- *  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
- *  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative 
- *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
- */
-
-package fr.philae.femto;
-
+package fr.ufc.l3info.oprog;
 
 import java.io.*;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**
- * @author Frederic Dadeau
+ * Created with IntelliJ IDEA.
+ * User: Frederic Dadeau
+ * Date: 26/08/2018
+ * Time: 10:48
  */
 public class ArticleDB {
 

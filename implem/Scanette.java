@@ -1,11 +1,4 @@
-/**
- *  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
- *  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative 
- *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
- */
-
-package fr.philae.femto;
-
+package fr.ufc.l3info.oprog;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,15 +6,17 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
- * @author Frederic Dadeau
+ * Created with IntelliJ IDEA.
+ * User: Frederic Dadeau
+ * Date: 26/08/2018
+ * Time: 10:48
  */
 public class Scanette {
 
     /** Etats possibles de la scanette */
     enum ETAT { BLOQUEE, EN_COURSES, RELECTURE, RELECTURE_OK, RELECTURE_KO };
-
+                      
     /** Etat courant de la scanette */
     private ETAT etat;
 
@@ -40,7 +35,7 @@ public class Scanette {
     /** Données utiles pour la relecture */
 
     /** Nombre maximum de produits à rescanner */
-    final private int A_RESCANNER = 12; 
+    final private int A_RESCANNER = 12; // (28) 5 // (29) 13
     /** Nombre actuel de produits à rescanner */
     private int aRescanner = 0;
     /** Verification en cours (sorte de second achats) */
@@ -80,7 +75,7 @@ public class Scanette {
             etat = ETAT.EN_COURSES;
             return 0;
         }
-        return -1;  
+        return -1;  // wrong state
     }
 
     /**
@@ -98,10 +93,12 @@ public class Scanette {
             try {
                 Article a = produits.getArticle(ean13);
                 int qu = quantite(ean13);
+                // (1) qu = 1;
                 qu++;
                 panier.put(ean13, qu);
                 return 0;
             } catch (ArticleNotFoundException e) {
+                // (2) remove
                 nonReconnus.add(ean13);
                 return -2;
             }
@@ -110,17 +107,21 @@ public class Scanette {
             // ajout aux articles relus
             int qt = (verif.containsKey(ean13)) ? verif.get(ean13) : 0;
             verif.put(ean13, qt + 1);
-            if (!panier.containsKey(ean13) || verif.get(ean13) > panier.get(ean13)) {
+            // (6) stuck at false next condition
+            if (!panier.containsKey(ean13) /* (3) remove eol */ || verif.get(ean13) > panier.get(ean13)) {
                 etat = ETAT.RELECTURE_KO;
-                return -3; 
+                return -3; // (4) -2;
             } else {
+                // (31) comment next line
                 aRescanner--;
                 if (aRescanner == 0) {
+                    // (5)
                     etat = ETAT.RELECTURE_OK;
                 }
                 return 0;
             }
         }
+        // (7) if (etat == ETAT.RELECTURE_OK) return 0;
         return -1;
     }
 
@@ -132,17 +133,22 @@ public class Scanette {
      *          -2 si le produit n'existait pas dans le achats
      */
     public int supprimer(long ean13) {
+        // (8) stuck at false
         if (etat != ETAT.EN_COURSES) {
             return -1;
         }
         int qu = quantite(ean13);
         if (qu < 1) {
-            return -2;  
+            return -2;  // (9) 0
         }
+        // (10) stuck at false
+        // (32) stuck at true
         if (qu == 1) {
+            // (11) remove next line
             panier.remove(ean13);
             return 0;
         }
+        // (12) remove next line
         panier.put(ean13, qu - 1);
         return 0;
     }
@@ -153,6 +159,7 @@ public class Scanette {
      * @return le nombre d'occurrences du produit dans le achats.
      */
     public int quantite(long ean13) {
+        // (13) return achats.get(ean13);
         return panier.containsKey(ean13) ? panier.get(ean13) : 0;
     }
 
@@ -162,7 +169,9 @@ public class Scanette {
      */
     public void abandon() {
         etat = ETAT.BLOQUEE;
+        // (14) remove next line
         panier.clear();
+        // (15) remove next line
         nonReconnus.clear();
     }
 
@@ -172,7 +181,7 @@ public class Scanette {
      * @return Un ensemble de codes EAN13 non reconnus.
      */
     public Set<Long> getReferencesInconnues() {
-        return new HashSet<Long>(nonReconnus); 
+        return new HashSet<Long>(nonReconnus); // (16) new HashSet<Long>();  // (19) nonReconnus
     }
 
     
@@ -184,6 +193,8 @@ public class Scanette {
         HashSet<Article> ret = new HashSet<Article>();
         for (long l : panier.keySet()) {
             try {
+                // (17) if (ret.size() < 1)
+                // (18) if (ret.size() < achats.size() - 1)
                 ret.add(produits.getArticle(l));
             }
             catch (ArticleNotFoundException e) { /* should not happen */ }
@@ -211,27 +222,39 @@ public class Scanette {
     public int transmission(Caisse c) {
 
         if (c == null) {
+            // (20) remove next line
             return -1;
         }
 
         if (etat != ETAT.RELECTURE_OK && etat != ETAT.EN_COURSES) {
+            // (21) remove next line
             return -1;
         }
 
         int codeRetourCaisse = c.connexion(this);
 
+        // (25) uncomment next line
+        // if (true) return codeRetourCaisse;
+
         if (codeRetourCaisse == 0) {
+            // (24) remove next line
             etat = ETAT.BLOQUEE;
+            // (22) remove next line
             panier.clear();
+            // (23) remove next line
             nonReconnus.clear();
             return 0;
         }
         else if (etat == ETAT.EN_COURSES && codeRetourCaisse == 1) {
             etat = ETAT.RELECTURE;
+            // (30) comment next line
             verif.clear();
             int nb = getNbArticles();
+            // (26) uncomment next line
+            // nb = 42;
             aRescanner = (nb > A_RESCANNER) ? A_RESCANNER : nb;
             if (aRescanner == 0) {
+                // (27) comment next line
                 etat = ETAT.RELECTURE_OK;
             }
             return 1;

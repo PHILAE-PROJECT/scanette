@@ -1,19 +1,9 @@
-/**
- *  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
- *  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative 
- *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
- */
-
-package fr.philae.femto;
-
+package fr.ufc.l3info.oprog;
 
 import java.io.IOException;
 import java.util.HashMap;
 
 
-/**
- * @author Frederic Dadeau
- */
 public class MaCaisse implements Caisse {
 
     enum ETAT_CAISSE {
@@ -27,6 +17,8 @@ public class MaCaisse implements Caisse {
     private ArticleDB produits;
     private HashMap<Article, Integer> achats;
     private double aPayer = 0;
+
+    public double THRESHOLD = 0.1;
     
 
     public MaCaisse(String pathToProductFile) throws ProductDBFailureException {
@@ -55,19 +47,22 @@ public class MaCaisse implements Caisse {
         if (s == null) {
             return -1;
         }
-
+        
         if (this.etat != ETAT_CAISSE.EN_ATTENTE) {
             return -1;
         }
 
+        // (1), (2), (3) remove 1 of the 3 conditions below
         if (!s.relectureEffectuee() & s.getArticles().size() > 0 & demandeRelecture()) {
             return 1;
         }
 
+        achats.clear();
         for (Article a : s.getArticles()) {
             achats.put(a, s.quantite(a.getCodeEAN13()));
         }
 
+        // (4) remove second condition below
         if (s.getReferencesInconnues().size() > 0 || s.getArticles().size() == 0) {
             this.etat = ETAT_CAISSE.ATTENTE_CAISSIER;
         }
@@ -84,7 +79,7 @@ public class MaCaisse implements Caisse {
      * @return true si une relecture doit être demandée, faux sinon.
      */
     public boolean demandeRelecture() {
-        return Math.random() < 0.1;    
+        return Math.random() < THRESHOLD;     // (5) change ratio
     }
 
 
@@ -98,12 +93,13 @@ public class MaCaisse implements Caisse {
         if (etat != ETAT_CAISSE.PAIEMENT) {
             return -42;
         }
+        // calcul du montant total des achats
         aPayer = 0;
         for (Article a : achats.keySet()) {
-            aPayer += a.getPrixUnitaire() * achats.get(a);  
+            aPayer += a.getPrixUnitaire() * achats.get(a);  // (6) remove operand
         }
-        if (somme >= aPayer) {
-            achats.clear();   
+        if (aPayer - somme < 0.01) {
+            achats.clear();   // (7) remove this line
             etat = ETAT_CAISSE.EN_ATTENTE;
         }
         return somme - aPayer;
@@ -114,7 +110,7 @@ public class MaCaisse implements Caisse {
      * Abandonne toute transaction en cours et replace la caisse en attente.
      */
     public void abandon() {
-        achats.clear();     
+        achats.clear();     // (8) remove this line
         etat = ETAT_CAISSE.EN_ATTENTE;
     }
 
@@ -141,26 +137,20 @@ public class MaCaisse implements Caisse {
     public int fermerSession() {
         if (etat == ETAT_CAISSE.AUTHENTIFIE) {
             etat = achats.isEmpty() ?
-                    ETAT_CAISSE.EN_ATTENTE :   
+                    ETAT_CAISSE.EN_ATTENTE :   // (9) change to PAIEMENT
                     ETAT_CAISSE.PAIEMENT;
             return 0;
         }
         return -1;
     }
 
-    /**
-     *  Permet d'ajouter un article à la liste des achats. 
-     *  @return     0   l'article a bien été ajouté.
-     *              -1  l'état de la caisse n'était pas correct
-     *              -2  l'article n'a pas été reconnu
-     */
     public int scanner(long ean13) {
         if (etat != ETAT_CAISSE.AUTHENTIFIE) {
-            return -1;   
+            return -1;   // (15) remove this line
         }
         try {
             Article a = produits.getArticle(ean13);
-            if (achats.containsKey(a)) {      
+            if (achats.containsKey(a)) {      // (10) stuck at false
                 achats.put(a, achats.get(a) + 1);
             }
             else {
@@ -173,20 +163,14 @@ public class MaCaisse implements Caisse {
         return 0;
     }
 
-    /**
-     *  Permet de supprimer un article de la liste des achats. 
-     *  @return     0   l'article a bien été supprimé.
-     *              -1  l'état de la caisse n'était pas correct
-     *              -2  l'article n'était pas dans la liste
-     */
     public int supprimer(long ean13) {
         if (etat != ETAT_CAISSE.AUTHENTIFIE) {
-            return -1;  
+            return -1;  // (14) remove this line
         }
         for (Article a : achats.keySet()) {
-            if (a.getCodeEAN13() == ean13) {  
+            if (a.getCodeEAN13() == ean13) {  // (12) stuck at false
                 int nb = achats.get(a);
-                if (nb > 1) {   
+                if (nb > 1) {   // (11) stuck at false      // (13) stuck at true
                     achats.put(a, nb-1);
                 }
                 else {

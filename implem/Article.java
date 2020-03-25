@@ -1,14 +1,7 @@
-/**
- *  This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
- *  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative 
- *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
- */
-
-package fr.philae.femto;
-
+package fr.ufc.l3info.oprog;
 
 /**
- * @author Frederic Dadeau
+ * Classe décrivant un article.
  */
 public class Article implements Comparable {
 
@@ -31,6 +24,7 @@ public class Article implements Comparable {
         prixUnitaire = _pu;
 
         nom = (_nom == null) ? "" : _nom;
+        // nom = (_nom == null) ? "prout" : _nom;
     }
 
     /**
@@ -60,6 +54,7 @@ public class Article implements Comparable {
 
     public boolean equals(Object a) {
         return a != null && a instanceof Article && ((Article)a).codeEAN13 == this.codeEAN13;
+        // return a.codeEAN13 == this.codeEAN13;
     }
 
     public int hashCode() {
@@ -67,10 +62,12 @@ public class Article implements Comparable {
     }
 
     public boolean isValidEAN13() {
+        // if (false) {
         if (codeEAN13 < 0) {
             return false;
         }
         String tab = Long.toString(codeEAN13);
+        // if (false) {
         if (tab.length() > 13) {
             return false;
         }
@@ -78,13 +75,17 @@ public class Article implements Comparable {
             tab = "0" + tab;
         }
         int sum = 0;
+        // for (int i=0; i < 13; i++) {
+        // for (int i=0; i < 11; i++) {
         for (int i=0; i < 12; i++) {
             int digit = tab.charAt(i) - '0';
             sum += (i % 2 == 1) ? digit * 3 : digit;
+            // sum += (i % 2 == 0) ? digit * 3 : digit;
         }
         int reste = sum % 10;
 
         int key = (reste == 0) ? 0 : 10 - reste;
+        // int key = 10 - reste;
 
         return key == (tab.charAt(12) - '0');
     }
