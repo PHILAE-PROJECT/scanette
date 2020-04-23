@@ -1,0 +1,5734 @@
+{
+  "__class__": "TraceSet",
+  "__module__": "agilkia_hmm.agilkia.json_traces",
+  "version": "0.1.4",
+  "traces": [
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.920000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.921000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.924000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.925000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.926000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.926000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.926000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.927000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse463345942"
+          },
+          "outputs": {
+            "Status": 1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.929000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.929000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.932000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.932000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.937000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.939000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.940000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse463345942"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.942000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.942000",
+            "sessionID": "client1",
+            "object": "scan1313953385"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.946000",
+            "sessionID": "client1",
+            "object": "caisse463345942"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006712"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.947000",
+            "sessionID": "client1",
+            "object": "caisse463345942"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.950000",
+            "sessionID": "client1",
+            "object": "caisse463345942"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "65.51"
+          },
+          "outputs": {
+            "Status": 2.1500000000000057
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.955000",
+            "sessionID": "client1",
+            "object": "caisse463345942"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.959000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.963000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.965000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.966000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.967000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.967000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.967000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse997608398"
+          },
+          "outputs": {
+            "Status": 1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.967000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.968000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.968000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.968000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.968000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.968000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.969000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse997608398"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.969000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.969000",
+            "sessionID": "client2",
+            "object": "scan1347137144"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.969000",
+            "sessionID": "client2",
+            "object": "caisse997608398"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.454000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.456000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.466000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.466000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.471000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.471000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.475000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse515132998"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.478000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.483000",
+            "sessionID": "client19",
+            "object": "scan1865127310"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "63.36"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.487000",
+            "sessionID": "client19",
+            "object": "caisse515132998"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.988000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.988000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:15.992000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.002000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.017000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.019000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.019000",
+            "sessionID": "client4",
+            "object": "caisse1289696681"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1289696681"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.020000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.021000",
+            "sessionID": "client4",
+            "object": "scan1174290147"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.041000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.042000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.044000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.044000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.045000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.046000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.049000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.052000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1607460018"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.052000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.053000",
+            "sessionID": "client5",
+            "object": "scan1285044316"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.053000",
+            "sessionID": "client5",
+            "object": "caisse1607460018"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.053000",
+            "sessionID": "client5",
+            "object": "caisse1607460018"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.055000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.056000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.070000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.073000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.074000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.077000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.083000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.101000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1588970020"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.124000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.124000",
+            "sessionID": "client6",
+            "object": "scan1811075214"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.134000",
+            "sessionID": "client6",
+            "object": "caisse1588970020"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.135000",
+            "sessionID": "client6",
+            "object": "caisse1588970020"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.137000",
+            "sessionID": "client6",
+            "object": "caisse1588970020"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "8.369999999999997"
+          },
+          "outputs": {
+            "Status": -1.7763568394002505e-15
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.139000",
+            "sessionID": "client6",
+            "object": "caisse1588970020"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.143000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.147000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.148000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.150000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.150000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.151000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.152000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.156000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1940447180"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.157000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.157000",
+            "sessionID": "client7",
+            "object": "scan1407343478"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.162000",
+            "sessionID": "client7",
+            "object": "caisse1940447180"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006712"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.162000",
+            "sessionID": "client7",
+            "object": "caisse1940447180"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.167000",
+            "sessionID": "client7",
+            "object": "caisse1940447180"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "65.51"
+          },
+          "outputs": {
+            "Status": 2.1500000000000057
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.167000",
+            "sessionID": "client7",
+            "object": "caisse1940447180"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.173000",
+            "sessionID": "client8",
+            "object": "scan245565335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.173000",
+            "sessionID": "client8",
+            "object": "scan245565335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse2121744517"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.177000",
+            "sessionID": "client8",
+            "object": "scan245565335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.179000",
+            "sessionID": "client8",
+            "object": "scan245565335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.183000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.187000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.187000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.195000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "0.0"
+          },
+          "outputs": {
+            "Status": -4.3
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.196000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "4.3"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.199000",
+            "sessionID": "client8",
+            "object": "caisse2121744517"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.202000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.202000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.206000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.210000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.214000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.216000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.216000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.217000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse183264084"
+          },
+          "outputs": {
+            "Status": 1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.217000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.217000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.217000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.218000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.218000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.218000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.218000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse183264084"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.218000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.219000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.219000",
+            "sessionID": "client9",
+            "object": "caisse183264084"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.219000",
+            "sessionID": "client9",
+            "object": "caisse183264084"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.219000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.227000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.228000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.229000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.230000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.230000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.231000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse183264084"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.231000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.232000",
+            "sessionID": "client9",
+            "object": "scan1066376662"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.235000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.235000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.237000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.237000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.238000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.239000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.242000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.244000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1490180672"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.246000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.247000",
+            "sessionID": "client10",
+            "object": "scan476402209"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "0.0"
+          },
+          "outputs": {
+            "Status": -42.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.251000",
+            "sessionID": "client10",
+            "object": "caisse1490180672"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.254000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.257000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.263000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.266000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.270000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.274000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.274000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1919892312"
+          },
+          "outputs": {
+            "Status": 1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.276000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.277000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.277000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.277000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.277000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.277000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.278000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1919892312"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.278000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.279000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.279000",
+            "sessionID": "client11",
+            "object": "caisse1919892312"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.280000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "3017620402678"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.280000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1919892312"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.281000",
+            "sessionID": "client11",
+            "object": "scan460332449"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "1.86"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.281000",
+            "sessionID": "client11",
+            "object": "caisse1919892312"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.286000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.286000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.287000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.287000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.288000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.289000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.289000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse250075633"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.291000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.292000",
+            "sessionID": "client12",
+            "object": "scan1143839598"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.294000",
+            "sessionID": "client12",
+            "object": "caisse250075633"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.297000",
+            "sessionID": "client12",
+            "object": "caisse250075633"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.298000",
+            "sessionID": "client12",
+            "object": "caisse250075633"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "63.36"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.298000",
+            "sessionID": "client12",
+            "object": "caisse250075633"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.549000",
+            "sessionID": "client24",
+            "object": "scan359023572"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse305808283"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.551000",
+            "sessionID": "client24",
+            "object": "scan359023572"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.552000",
+            "sessionID": "client24",
+            "object": "scan359023572"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "0.0"
+          },
+          "outputs": {
+            "Status": -42.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.554000",
+            "sessionID": "client24",
+            "object": "caisse305808283"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.555000",
+            "sessionID": "client24",
+            "object": "caisse305808283"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.555000",
+            "sessionID": "client24",
+            "object": "caisse305808283"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "100.0"
+          },
+          "outputs": {
+            "Status": -42.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.555000",
+            "sessionID": "client24",
+            "object": "caisse305808283"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.317000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.317000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.322000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.325000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.325000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.327000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.327000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.329000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse110718392"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.329000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.330000",
+            "sessionID": "client14",
+            "object": "scan914424520"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.330000",
+            "sessionID": "client14",
+            "object": "caisse110718392"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.330000",
+            "sessionID": "client14",
+            "object": "caisse110718392"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.330000",
+            "sessionID": "client14",
+            "object": "caisse110718392"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.331000",
+            "sessionID": "client14",
+            "object": "caisse110718392"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "63.36"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.331000",
+            "sessionID": "client14",
+            "object": "caisse110718392"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.396000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.397000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.401000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.403000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.403000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.403000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.403000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.404000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse114935352"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.404000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.404000",
+            "sessionID": "client16",
+            "object": "scan231685785"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.404000",
+            "sessionID": "client16",
+            "object": "caisse114935352"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.404000",
+            "sessionID": "client16",
+            "object": "caisse114935352"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.405000",
+            "sessionID": "client16",
+            "object": "caisse114935352"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "61.21"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.405000",
+            "sessionID": "client16",
+            "object": "caisse114935352"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.406000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.407000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.411000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.416000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.419000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.427000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.431000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.433000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse32374789"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.433000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.433000",
+            "sessionID": "client17",
+            "object": "scan2110121908"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.433000",
+            "sessionID": "client17",
+            "object": "caisse32374789"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.436000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.437000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.438000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.438000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.438000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.439000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.442000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1023487453"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.444000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.447000",
+            "sessionID": "client18",
+            "object": "scan1973538135"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.450000",
+            "sessionID": "client18",
+            "object": "caisse1023487453"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.450000",
+            "sessionID": "client18",
+            "object": "caisse1023487453"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.491000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.498000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.502000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.505000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.507000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.507000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.507000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.508000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1365202186"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.508000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.508000",
+            "sessionID": "client20",
+            "object": "scan1694819250"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.508000",
+            "sessionID": "client20",
+            "object": "caisse1365202186"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.510000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.510000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.512000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.512000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.513000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.513000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.513000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1586600255"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.514000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.514000",
+            "sessionID": "client21",
+            "object": "scan1651191114"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.516000",
+            "sessionID": "client21",
+            "object": "caisse1586600255"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.522000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.522000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.525000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.525000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.525000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.525000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.526000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse932583850"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.526000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.526000",
+            "sessionID": "client22",
+            "object": "scan474675244"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "-42.0"
+          },
+          "outputs": {
+            "Status": -105.36
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.527000",
+            "sessionID": "client22",
+            "object": "caisse932583850"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "63.36"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.529000",
+            "sessionID": "client22",
+            "object": "caisse932583850"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.533000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.533000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.536000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.537000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.537000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.537000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.538000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1579572132"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.538000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.539000",
+            "sessionID": "client23",
+            "object": "scan212628335"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "62.36"
+          },
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.544000",
+            "sessionID": "client23",
+            "object": "caisse1579572132"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "63.36"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.545000",
+            "sessionID": "client23",
+            "object": "caisse1579572132"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.561000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.561000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.564000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.564000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.564000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.565000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.565000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse292938459"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.565000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.565000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.566000",
+            "sessionID": "client25",
+            "object": "caisse292938459"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.566000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.566000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.566000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.567000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.568000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.569000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.569000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse292938459"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.570000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.570000",
+            "sessionID": "client25",
+            "object": "scan2111991224"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.572000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.574000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1993134103"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.576000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.577000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.579000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.579000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ajouter",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.579000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.579000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.580000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "supprimer",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.580000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.580000",
+            "sessionID": "client26",
+            "object": "caisse1993134103"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.580000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1993134103"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.580000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.581000",
+            "sessionID": "client26",
+            "object": "scan917142466"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.585000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.586000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.589000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.591000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.593000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.596000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.597000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse653305407"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.598000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.599000",
+            "sessionID": "client27",
+            "object": "scan405662939"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "fermerSession",
+          "inputs": {},
+          "outputs": {
+            "Status": -1.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.599000",
+            "sessionID": "client27",
+            "object": "caisse653305407"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.600000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.601000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.602000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.602000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.603000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.603000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.604000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.604000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1404928347"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.604000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.604000",
+            "sessionID": "client28",
+            "object": "scan1130478920"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "ouvrirSession",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.605000",
+            "sessionID": "client28",
+            "object": "caisse1404928347"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "0.0"
+          },
+          "outputs": {
+            "Status": -42.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.605000",
+            "sessionID": "client28",
+            "object": "caisse1404928347"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.607000",
+            "sessionID": "client29",
+            "object": "scan604107971"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.608000",
+            "sessionID": "client29",
+            "object": "scan604107971"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse123961122"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.613000",
+            "sessionID": "client29",
+            "object": "scan604107971"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.619000",
+            "sessionID": "client29",
+            "object": "scan604107971"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "payer",
+          "inputs": {
+            "param": "0.0"
+          },
+          "outputs": {
+            "Status": -42.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.622000",
+            "sessionID": "client29",
+            "object": "caisse123961122"
+          }
+        }
+      ],
+      "meta_data": {}
+    },
+    {
+      "__class__": "Trace",
+      "__module__": "agilkia_hmm.agilkia.json_traces",
+      "events": [
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.629000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.629000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.633000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.637000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.638000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.639000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.640000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "1"
+          },
+          "outputs": {
+            "Status": -2.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.640000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1982791261"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.641000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.642000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "caisse1982791261"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "debloquer",
+          "inputs": {},
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "5410188006711"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.643000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "8715700110622"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.644000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "scanner",
+          "inputs": {
+            "param": "45496420598"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.644000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "transmission",
+          "inputs": {
+            "param": "caisse1982791261"
+          },
+          "outputs": {
+            "Status": 0.0
+          },
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.644000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        },
+        {
+          "__class__": "Event",
+          "__module__": "agilkia_hmm.agilkia.json_traces",
+          "action": "abandon",
+          "inputs": {},
+          "outputs": {},
+          "meta_data": {
+            "timestamp": "2020-03-24T15:55:16.645000",
+            "sessionID": "client30",
+            "object": "scan1227229563"
+          }
+        }
+      ],
+      "meta_data": {}
+    }
+  ],
+  "meta_data": {
+    "date": "2020-04-23T22:20:05.631387",
+    "author": "nbremond",
+    "dataset": "unknown",
+    "action_chars": null,
+    "source": "run_scanette.py",
+    "cmdline": [
+      "run_scanette.py"
+    ]
+  }
+}
