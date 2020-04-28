@@ -20,6 +20,23 @@ import java.util.HashSet;
  */
 public class TestCsv {
 
+    /**
+     * A main method, in case anyone wants to run this from the command line.
+     *
+     * @param args Name of a traces *.csv file.
+     */
+    public static void main(String[] args) throws Exception {
+        if (args.length == 0) {
+            System.out.println("Arguments: tests.csv");
+        } else if (new File("resources").isDirectory()) {
+            readFromCSV(new File(args[0]));
+        } else {
+            System.out.println("NOTE: you must run this program in a directory that has a 'resources' folder");
+            System.out.println("that contains correct produitsCaisse.csv and produitsScanette.csv data files.");
+            System.out.println("For example, run it in the 'replay' directory of the Scanette repository.");
+        }
+    }
+
     @Test
     public void testAllWithCsv() throws Exception {
         readFromCSV(new File("tests.csv"));
