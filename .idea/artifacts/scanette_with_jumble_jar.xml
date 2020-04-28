@@ -12,6 +12,7 @@
       <element id="library" level="project" name="junit-4.12" />
       <element id="library" level="project" name="json-simple" />
       <element id="library" level="project" name="mockito-core-3.3.3" />
+      <element id="library" level="project" name="ScanetteTestReplay" />
     </root>
   </artifact>
 </component>

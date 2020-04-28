@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ScanetteTestReplay">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ScanetteTestReplay.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
