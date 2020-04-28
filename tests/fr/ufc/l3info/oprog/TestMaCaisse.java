@@ -3,7 +3,7 @@
  *  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative 
  *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
  */
-package fr.philae.femto;
+package fr.ufc.l3info.oprog;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,7 +34,7 @@ public class TestMaCaisse {
 
     @Before
     public void setUp() throws ProductDBFailureException {
-        maCaisse = spy(new MaCaisse("./target/classes/csv/produitsOK.csv"));
+        maCaisse = Mockito.spy(new MaCaisse(TestScanette.PATH_TO_CSV + "produitsOK.csv"));
 
         maScanette = Mockito.mock(Scanette.class);
 
@@ -67,12 +67,12 @@ public class TestMaCaisse {
 
     @Test(expected = ProductDBFailureException.class)
     public void fichierInexistant() throws ProductDBFailureException {
-        new MaCaisse("./target/classes/csv/fichierInexistant.csv");
+        new MaCaisse(TestScanette.PATH_TO_CSV + "fichierInexistant.csv");
     }
 
     @Test(expected = ProductDBFailureException.class)
     public void fichierAvecErreur() throws ProductDBFailureException {
-        new MaCaisse("./target/classes/csv/produitsKO.csv");
+        new MaCaisse(TestScanette.PATH_TO_CSV + "produitsKO.csv");
     }
 
 

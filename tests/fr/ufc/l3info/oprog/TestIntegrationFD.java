@@ -4,7 +4,7 @@
  *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
  */
 
-package fr.philae.femto;
+package fr.ufc.l3info.oprog;
 
 
 import org.junit.Before;
@@ -20,16 +20,19 @@ import static org.junit.Assert.assertTrue;
  */
 public class TestIntegrationFD {
 
-    private MyCaisse maCaisse;
+    // WAS: private MyCaisse maCaisse;
+    private MaCaisse maCaisse;
+
     private HashSet<Article> panier;
     private HashSet<Long> refsInconnues;
     private Scanette maScanette;
     private double totalPanier;
 
     @Before
-    public void setUp() throws ProductDBFailureException {                
-        maCaisse = new MyCaisse("./target/classes/csv/produitsOK.csv");
-        maScanette = new Scanette("./target/classes/csv/produitsOK.csv");
+    public void setUp() throws ProductDBFailureException {
+        // WAS: maCaisse = new MyCaisse("./target/classes/csv/produitsOK.csv");
+        maCaisse = new MaCaisse(TestScanette.PATH_TO_CSV + "produitsOK.csv");
+        maScanette = new Scanette(TestScanette.PATH_TO_CSV + "produitsOK.csv");
     }
 
     private void initPanier() {
