@@ -28,7 +28,9 @@ import shutil
 import os
 import time
 import re
-from typing import Tuple
+from typing import Tuple, List
+import pandas as pd
+import matplotlib.pyplot as plt
 
 
 # %% Global defaults
@@ -184,37 +186,59 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
     return (score, total)
 
 
+# %%
+
+def run_experiments(csv_files: List[str]) -> pd.DataFrame:
+    """Run one experiment for each CSV file, measuring all its mutation coverage.
+
+    Returns the results as a Pandas DataFrame (one row per experiment).
+    """
+    rows = []
+    for csv in csv_files:
+        csv_file = Path(csv)
+        outdir = output_directory(csv_file)
+        print(f"Testing {csv_file} -- full output is in {outdir}/*", flush=True)
+        events = len([line for line in csv_file.read_text().split("\n") if line])
+        (hand, hand_max) = run_mutants("Hand", csv_file, outdir)
+        (caisse, caisse_max) = run_mutants("MaCaisse", csv_file, outdir)
+        (scanette, scanette_max) = run_mutants("Scanette", csv_file, outdir)
+        killed = hand + caisse + scanette
+        total = hand_max + caisse_max + scanette_max
+        percent = 100.0 * killed / total
+        rows.append({"CSV": csv, "Events": events, "Hand": hand, "MaCaisse": caisse,
+                     "Scanette": scanette, "Total": total, "Percent": percent})
+    return pd.DataFrame(rows)
+
+
 # %% Measure mutation scores for the given test suites.
 
 def main(args):
-    if len(args) >= 2:
-        start = 1
-        out_file = OUTPUT_FILE
-        if args[start].startswith("--out="):
-            out_file = args[start].split("=")[1]
-            start += 1
-        with Path(out_file).with_suffix(".csv").open("w") as out:
-            out.write(f"CSV,Events,Hand,MaCaisse,Scanette,Total,Percent\n")
-            for csv in args[start:]:
-                csv_file = Path(csv)
-                outdir = output_directory(csv_file)
-                print(f"Testing {csv_file} -- full output is in {outdir}/*", flush=True)
-                events = len([line for line in csv_file.read_text().split("\n") if line])
-                (hand, hand_max) = run_mutants("Hand", csv_file, outdir)
-                (caisse, caisse_max) = run_mutants("MaCaisse", csv_file, outdir)
-                (scanette, scanette_max) = run_mutants("Scanette", csv_file, outdir)
-                killed = hand + caisse + scanette
-                total = hand_max + caisse_max + scanette_max
-                percent = 100.0 * killed / total
-                out.write(f"{csv},{events},{hand},{caisse},{scanette},{killed},{percent:.1f}\n")
+    start = 1
+    out_file = OUTPUT_FILE
+    if args[start].startswith("--out="):
+        out_file = args[start].split("=")[1]
+        start += 1
+    csv_files = args[start:]
+    if len(csv_files) > 0:
+        data = run_experiments(csv_files)
+        data.Percent = data.Percent.round(2)
+        data.to_csv(Path(out_file).with_suffix(".csv"), index_label="Index")
+        # just for fun we also plot the hand and jumble percentages
+        data["ByHand"] = 100.0 * data.Hand / HAND_MUTANTS
+        data["Jumble"] = 100.0 * (data.MaCaisse + data.Scanette) / (30 + 26)
+        data["Total"] = data.Percent
+        data.plot.line(x="CSV", y=["Total", "ByHand", "Jumble"], ylim=(0,100))
+        plt.savefig(Path(out_file).with_suffix(".png"))
+        # plt.show()
     else:
         script = sys.argv[0] or "measure_mutation_scores.py"
         print(f"This script takes CSV files containing test suites of Scanette traces,")
         print(f"then runs each test suite against all mutants, including Jumble mutants.")
-        print(f"The resulting mutation scores are saved into a .csv file for later analysis.")
-        print(f"It is recommended that you graph the 'Percent' column.")
+        print(f"The resulting mutation scores are saved into a *.csv file for later analysis.")
+        print(f"It also graphs the mutation scores into an output *.png graph.")
+        print(f"The default output file names are {OUTPUT_FILE}/.png.")
         print()
-        print(f"Usage: python {script} [--out=FILE.csv] test_suite.csv ...")
+        print(f"Usage: python {script} [--out=FILE.csv] test50.csv test100.csv test150.csv ...")
 
 # %%
 
