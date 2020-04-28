@@ -4,7 +4,7 @@
  *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
  */
 
-package fr.philae.femto;
+package fr.ufc.l3info.oprog;
 
 
 import org.junit.Before;
@@ -26,11 +26,17 @@ import java.util.Set;
 @RunWith(MockitoJUnitRunner.class)
 public class TestScanette {
 
+    /** Path to access the 'tests/csv' directory.
+     *  Change this here to affect all unit tests.
+     */
+    // WAS: public static final String PATH_TO_CSV = "./target/classes/csv/";   // for Eclipse?
+    public static final String PATH_TO_CSV = "tests/csv/";     // for IntelliJ
+
     private Scanette scan;
 
     @Before
     public void setUp() throws ProductDBFailureException {
-        scan = new Scanette("./target/classes/csv/produitsOK.csv");
+        scan = new Scanette(PATH_TO_CSV + "produitsOK.csv");
     }
 
 
@@ -40,12 +46,12 @@ public class TestScanette {
 
     @Test(expected=ProductDBFailureException.class)
     public void initialisationKO_fichierInexistant() throws ProductDBFailureException {
-        new Scanette("./target/classes/csv");
+        new Scanette(PATH_TO_CSV);
     }
 
     @Test(expected=ProductDBFailureException.class)
     public void initialisationKO_fichierKO() throws ProductDBFailureException {
-        new Scanette("./target/classes/csv/produitsKO.csv");
+        new Scanette(PATH_TO_CSV + "produitsKO.csv");
     }
 
 
@@ -313,7 +319,7 @@ public class TestScanette {
 
     @Test       // relecture de 12 articles différents + vérification du changement d'état
     public void scannerRelecture4() throws ProductDBFailureException {
-        scan = new Scanette("./target/classes/csv/produits.csv");
+        scan = new Scanette(PATH_TO_CSV + "produits.csv");
         Caisse mockCaisse = Mockito.mock(Caisse.class);
         Mockito.when(mockCaisse.connexion(scan)).thenReturn(1);
         scan.debloquer();

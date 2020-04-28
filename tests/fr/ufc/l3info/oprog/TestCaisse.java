@@ -4,7 +4,7 @@
  *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
  */
 
-package fr.philae.femto;
+package fr.ufc.l3info.oprog;
 
 
 import org.junit.Before;
@@ -12,8 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
-
-import java.util.HashSet;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.doReturn;
@@ -36,7 +34,7 @@ public class TestCaisse {
 
     @Before
     public void setUp() throws ProductDBFailureException {
-        maCaisse = spy(new MaCaisse("./target/classes/csv/produitsOK.csv"));
+        maCaisse = Mockito.spy(new MaCaisse(TestScanette.PATH_TO_CSV + "produitsOK.csv"));
         maScanette = Mockito.mock(Scanette.class);
     }
 

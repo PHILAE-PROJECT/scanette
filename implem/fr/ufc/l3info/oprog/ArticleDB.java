@@ -1,7 +1,6 @@
 package fr.ufc.l3info.oprog;
 
 import java.io.*;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 /**

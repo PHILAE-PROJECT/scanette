@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: fr.ufc.l3info.oprog.TestCsv
+Class-Path: objenesis-2.6.jar hamcrest-core-1.3.jar byte-buddy-1.10.9.ja
+ r junit-4.12.jar json-simple.jar mockito-core-3.3.3.jar
+

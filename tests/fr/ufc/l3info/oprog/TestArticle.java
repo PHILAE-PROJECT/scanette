@@ -4,14 +4,13 @@
  *  Commons, PO Box 1866, Mountain View, CA 94042, USA.
  */
 
-package fr.philae.femto;
+package fr.ufc.l3info.oprog;
 
 
 import org.junit.Test;
 import org.junit.Before;
 
 import java.util.HashSet;
-import java.util.TreeSet;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
