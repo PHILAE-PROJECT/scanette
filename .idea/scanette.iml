@@ -14,5 +14,6 @@
     <orderEntry type="library" name="byte-buddy-1.10.9" level="project" />
     <orderEntry type="library" name="objenesis-2.6" level="project" />
     <orderEntry type="library" name="json-simple" level="project" />
+    <orderEntry type="library" name="ScanetteTestReplay" level="project" />
   </component>
 </module>
