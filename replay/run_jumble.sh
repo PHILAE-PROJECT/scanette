@@ -4,11 +4,11 @@
 # To use a different csv file, copy it to 'tests.csv'.
 TESTS=tests.csv
 SIZE=$(cat "$TESTS" | wc -l)
-
-CP='json-simple.jar;junit-4.12.jar;../out/production/scanette;../out/test/scanette' 
-for SRC in fr.philae.femto.{MaCaisse,Scanette}
+PACKAGE=fr.ufc.l3info.oprog
+CP='../lib/*;../out/production/scanette;../out/test/scanette;../implem;../tests'
+for SRC in MaCaisse Scanette
 do
-    echo "Running Jumble on $SRC using $TESTS with $SIZE steps..."
-    java -jar jumble_binary_1.3.0.jar -c $CP $SRC TestCsv
+    echo "Running Jumble on class $SRC using $TESTS with $SIZE steps..."
+    java -jar ../lib/jumble_binary_1.3.0.jar -c $CP $PACKAGE.$SRC $PACKAGE.TestCsv
 done
 
