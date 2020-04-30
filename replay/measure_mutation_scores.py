@@ -6,13 +6,21 @@ Usage:
 
     python measure_mutation_scores.py test_suite1.csv ...
 
+The combined statistical summary results go into "results.csv" by default.
+It also generates a graph of the total "Percent" column into "results.png".
+
 It is a 'noisy' app that prints progress messages to standard output.
 
 For each <input>.csv file, the detailed outputs of the individual mutation runs
 go into a subdirectory called <input>. 
 
-The combined statistical summary results go into "results.csv" by default.
-It is suggested that you graph the "Percent" column.
+NOTE: you need to run it in this directory, as the script relies on finding:
+ * all the necessary *.jar files in ../lib
+ * all the Scanette *.class files either in ../out/production/scanette (IntelliJ puts them there
+   when you build the project) or in ../implem (if you compile them yourself with javac)
+ * all the Scanette JUnit test *.class files either in ../out/test/scanette (IntelliJ)
+   or in ../tests (if you compile them yourself with javac)
+
 
 Created on Mon Apr 27 2020.
 License: MIT
@@ -40,22 +48,16 @@ OUTPUT_FILE = "results.csv"
 
 HAND_MUTANTS = 49
 
-# Folder of *.jar files, including jumble etc.
-JAR_FOLDER = "scanette_with_jumble_jar"
-
 # Package of the classes to mutate (and their unit tests)
 PACKAGE = "fr.ufc.l3info.oprog."
 
 # class path entries (plus either scanette.jar or a mutant .jar)
-# Not used at the moment.
 otherJarsNames = [
-    "ScanetteTestReplay.jar",
-    "json-simple.jar",
-    "junit-4.12.jar",
-    "hamcrest-core-1.3.jar",       # needed by junit
-    "jumble_binary_1.3.0.jar",     # creates Jumble mutants (from http://jumble.sourceforge.net)
-    "../out/production/scanette",  # Scanette code (or could use scanette.jar?)
-    "../out/test/scanette",        # My extra JUnit test: tests/fr/ufc/l3info/oprog/TestCsv.java
+    "../lib/*",     # all necessary *.jar files, including jumble and ScanetteTestReplay.jar
+    "../out/production/scanette",  # Scanette .class files, compiled from ../implem
+    "../out/test/scanette",        # JUnit tests (*.class), compiled from ../tests
+    "../implem",  # .class files for non-IntelliJ users
+    "../tests",   # .class files for non-IntelliJ users
     ]
 
 CLASSPATH_SEP = ";" if os.name == "nt" else ":"
@@ -84,7 +86,7 @@ def executeCsvFile(csv_file, jar_name, output_dir) -> str:
     Returns a letter corresponding to the return code ('F' means test failed = mutant killed.)
     Detailed return messages are stored in resultFile and errorFile
     """
-    jars = [jar_name] + [JAR_FOLDER + "/*"]   # WAS: otherJarsNames
+    jars = [jar_name] + otherJarsNames
     cp = CLASSPATH_SEP.join(jars)
     results = output_dir / f"result_{jar_name}.txt"
     errors = output_dir / f"errorFile_{jar_name}.txt"
@@ -123,7 +125,7 @@ def run_jumble(csv_file, class_to_mutate, output_dir) -> int:
     """
     # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
     shutil.copyfile(csv_file, Path("tests.csv"))
-    cp = JAR_FOLDER + "/*"
+    cp = CLASSPATH_SEP.join(otherJarsNames)
     results = output_dir / f"result_{class_to_mutate}.txt"
     errors = output_dir / f"errorFile_{class_to_mutate}.txt"
     clazz = PACKAGE + class_to_mutate
@@ -167,7 +169,7 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
     """
     start = time.perf_counter()
     if name == "Hand":
-        print(f"  {name}-mutants: ", end="")
+        print(f"  {name}-mutants: ", end="", flush=True)
         score = 0
         total = HAND_MUTANTS
         summary = []
@@ -215,7 +217,7 @@ def run_experiments(csv_files: List[str]) -> pd.DataFrame:
 def main(args):
     start = 1
     out_file = OUTPUT_FILE
-    if args[start].startswith("--out="):
+    if start < len(args) and args[start].startswith("--out="):
         out_file = args[start].split("=")[1]
         start += 1
     csv_files = args[start:]
@@ -237,6 +239,8 @@ def main(args):
         print(f"The resulting mutation scores are saved into a *.csv file for later analysis.")
         print(f"It also graphs the mutation scores into an output *.png graph.")
         print(f"The default output file names are {OUTPUT_FILE}/.png.")
+        print(f"NOTE that you need all the *.java files in ../implem and ../tests compiled")
+        print(f"into *.class files.  See instructions at the top of this script for details.")
         print()
         print(f"Usage: python {script} [--out=FILE.csv] test50.csv test100.csv test150.csv ...")
 

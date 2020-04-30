@@ -3,6 +3,11 @@ Programme pour rejouer les traces d'usage sur la scanette
 
 Le programme est écrit en Java (nécessite Java 8 ou supérieur pour fonctionner). Il a pour but de rejouer les traces produits par le simulateur et/ou générées par les outils, sur des implantations Java de la scanette. 
 
+# Jouer les tests sur TOUS les mutants de la Scanette
+
+> `python measure_mutation_scores.py suite1.csv suite2.csv ...`
+> `cat results.csv`
+
 
 # Jouer les tests sur l'implem de référence
 
