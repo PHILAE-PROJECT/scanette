@@ -34,6 +34,7 @@ from pathlib import Path
 import sys
 import shutil
 import os
+import subprocess
 import time
 import re
 from typing import Tuple, List
@@ -88,12 +89,13 @@ def executeCsvFile(csv_file, jar_name, output_dir) -> str:
     """
     jars = [jar_name] + otherJarsNames
     cp = CLASSPATH_SEP.join(jars)
-    results = output_dir / f"result_{jar_name}.txt"
-    errors = output_dir / f"errorFile_{jar_name}.txt"
-    commande = f"java -cp {cp} fr.philae.ScanetteTraceExecutor {csv_file} >{results} 2>{errors}"
-    # print(f"Trying: {commande}")
-    returnCode = os.system(commande)
-    return retChar(returnCode)
+    args = ["java", "-cp", cp, "fr.philae.ScanetteTraceExecutor", csv_file]
+    with open(output_dir / f"result_{jar_name}.txt", "w") as results:
+        with open(output_dir / f"errorFile_{jar_name}.txt", "w")as errors:
+            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc.communicate()
+            returnCode = proc.returncode
+            return retChar(returnCode)
 
 
 # %%
