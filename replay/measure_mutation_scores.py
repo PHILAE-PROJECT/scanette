@@ -72,13 +72,13 @@ def retChar(returnCode: int) -> str:
         rc = "."
     elif returnCode == 1:
         rc = "F"
-    elif returnCode == -1:
+    elif returnCode == -1 or returnCode == 4294967295:  # -1 as unsigned
         rc = "X"
     else:
         rc = "?"
-        print("The Java program return code was not 0, 1 or -1.")
+        print(f"The Java program return code was not 0, 1 or -1, but was {returnCode}")
         print("This may reveal a problem while invoking Java.")
-        print("Maybe the absolutePath variable should be modified.")
+        print("Maybe the class path should be modified.")
     return rc
 
 def executeCsvFile(csv_file, jar_name, output_dir) -> str:
