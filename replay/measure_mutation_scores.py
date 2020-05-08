@@ -72,7 +72,7 @@ def retChar(returnCode: int) -> str:
         rc = "."
     elif returnCode == 1:
         rc = "F"
-    elif returnCode == -1 or returnCode == 4294967295:  # -1 as unsigned
+    elif returnCode in [-1, 255, 4294967295]:  # -1 as int, uint8, or uint32.
         rc = "X"
     else:
         rc = "?"
