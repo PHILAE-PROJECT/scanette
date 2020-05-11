@@ -32,6 +32,7 @@ With some code taken from ExecuteTraceOpti.py by Yves Ledru (MIT license).
 
 from pathlib import Path
 import sys
+import glob
 import shutil
 import os
 import subprocess
@@ -81,7 +82,7 @@ def retChar(returnCode: int) -> str:
         print("Maybe the class path should be modified.")
     return rc
 
-def executeCsvFile(csv_file, jar_name, output_dir) -> str:
+def executeCsvFile(csv_file: Path, jar_name: str, output_dir: Path) -> str:
     """Execute jar_name (typically a mutant) on test case csv_file.
 
     Returns a letter corresponding to the return code ('F' means test failed = mutant killed.)
@@ -89,7 +90,7 @@ def executeCsvFile(csv_file, jar_name, output_dir) -> str:
     """
     jars = [jar_name] + otherJarsNames
     cp = CLASSPATH_SEP.join(jars)
-    args = ["java", "-cp", cp, "fr.philae.ScanetteTraceExecutor", csv_file]
+    args = ["java", "-cp", cp, "fr.philae.ScanetteTraceExecutor", str(csv_file)]
     with open(output_dir / f"result_{jar_name}.txt", "w") as results:
         with open(output_dir / f"errorFile_{jar_name}.txt", "w")as errors:
             proc = subprocess.Popen(args, stderr=errors, stdout=results)
@@ -118,7 +119,7 @@ def read_jumble_results(result_file: Path) -> Tuple[int, int]:
         return (0, 0)
 
 
-def run_jumble(csv_file, class_to_mutate, output_dir) -> int:
+def run_jumble(csv_file: Path, class_to_mutate: str, output_dir: Path) -> int:
     """Run Jumble on the given `class_to_mutate` with default mutation operators.
 
     Full Jumble output is saved in `<output_dir>/result_jumble_<class_to_mutate>.txt`.
@@ -224,6 +225,9 @@ def main(args):
         start += 1
     csv_files = args[start:]
     if len(csv_files) > 0:
+        if len(csv_files) == 1 and "*" in csv_files[0]:
+            # expand this pattern, because Windows does not expand them by default!
+            csv_files = glob.glob(csv_files[0])
         data = run_experiments(csv_files)
         data.Percent = data.Percent.round(2)
         data.to_csv(Path(out_file).with_suffix(".csv"), index_label="Index")
