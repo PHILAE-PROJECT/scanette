@@ -129,17 +129,19 @@ def run_jumble(csv_file: Path, class_to_mutate: str, output_dir: Path) -> int:
     # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
     shutil.copyfile(csv_file, Path("tests.csv"))
     cp = CLASSPATH_SEP.join(otherJarsNames)
-    results = output_dir / f"result_{class_to_mutate}.txt"
-    errors = output_dir / f"errorFile_{class_to_mutate}.txt"
+    results_path = output_dir / f"result_{class_to_mutate}.txt"
     clazz = PACKAGE + class_to_mutate
     test = PACKAGE + "TestCsv"
-    commande = f"java -cp {cp} com.reeltwo.jumble.Jumble {clazz} {test} >{results} 2>{errors}"
-    # print(f"Trying: {commande}")
-    returnCode = os.system(commande)
-    if returnCode == 0 and results.exists():
-        return read_jumble_results(results)
-    else:
-        return (0, 0)   # ignore this class.  Error should have already been printed?
+    args = ["java", "-cp", cp, "com.reeltwo.jumble.Jumble", clazz,test]
+    with open(results_path, "w") as results:
+        with open(output_dir / f"errorFile_{class_to_mutate}.txt", "w")as errors:
+            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc.communicate()
+            returnCode = proc.returncode
+            if returnCode == 0 and results_path.exists():
+                return read_jumble_results(results_path)
+            else:
+                return (0, 0)   # ignore this class.  Error should have already been printed?
 
 
 # %%
