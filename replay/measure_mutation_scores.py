@@ -32,8 +32,10 @@ With some code taken from ExecuteTraceOpti.py by Yves Ledru (MIT license).
 
 from pathlib import Path
 import sys
+import glob
 import shutil
 import os
+import subprocess
 import time
 import re
 from typing import Tuple, List
@@ -71,16 +73,16 @@ def retChar(returnCode: int) -> str:
         rc = "."
     elif returnCode == 1:
         rc = "F"
-    elif returnCode == -1:
+    elif returnCode in [-1, 255, 4294967295]:  # -1 as int, uint8, or uint32.
         rc = "X"
     else:
         rc = "?"
-        print("The Java program return code was not 0, 1 or -1.")
+        print(f"The Java program return code was not 0, 1 or -1, but was {returnCode}")
         print("This may reveal a problem while invoking Java.")
-        print("Maybe the absolutePath variable should be modified.")
+        print("Maybe the class path should be modified.")
     return rc
 
-def executeCsvFile(csv_file, jar_name, output_dir) -> str:
+def executeCsvFile(csv_file: Path, jar_name: str, output_dir: Path) -> str:
     """Execute jar_name (typically a mutant) on test case csv_file.
 
     Returns a letter corresponding to the return code ('F' means test failed = mutant killed.)
@@ -88,12 +90,13 @@ def executeCsvFile(csv_file, jar_name, output_dir) -> str:
     """
     jars = [jar_name] + otherJarsNames
     cp = CLASSPATH_SEP.join(jars)
-    results = output_dir / f"result_{jar_name}.txt"
-    errors = output_dir / f"errorFile_{jar_name}.txt"
-    commande = f"java -cp {cp} fr.philae.ScanetteTraceExecutor {csv_file} >{results} 2>{errors}"
-    # print(f"Trying: {commande}")
-    returnCode = os.system(commande)
-    return retChar(returnCode)
+    args = ["java", "-cp", cp, "fr.philae.ScanetteTraceExecutor", str(csv_file)]
+    with open(output_dir / f"result_{jar_name}.txt", "w") as results:
+        with open(output_dir / f"errorFile_{jar_name}.txt", "w")as errors:
+            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc.communicate()
+            returnCode = proc.returncode
+            return retChar(returnCode)
 
 
 # %%
@@ -116,7 +119,7 @@ def read_jumble_results(result_file: Path) -> Tuple[int, int]:
         return (0, 0)
 
 
-def run_jumble(csv_file, class_to_mutate, output_dir) -> int:
+def run_jumble(csv_file: Path, class_to_mutate: str, output_dir: Path) -> int:
     """Run Jumble on the given `class_to_mutate` with default mutation operators.
 
     Full Jumble output is saved in `<output_dir>/result_jumble_<class_to_mutate>.txt`.
@@ -126,17 +129,19 @@ def run_jumble(csv_file, class_to_mutate, output_dir) -> int:
     # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
     shutil.copyfile(csv_file, Path("tests.csv"))
     cp = CLASSPATH_SEP.join(otherJarsNames)
-    results = output_dir / f"result_{class_to_mutate}.txt"
-    errors = output_dir / f"errorFile_{class_to_mutate}.txt"
+    results_path = output_dir / f"result_{class_to_mutate}.txt"
     clazz = PACKAGE + class_to_mutate
     test = PACKAGE + "TestCsv"
-    commande = f"java -cp {cp} com.reeltwo.jumble.Jumble {clazz} {test} >{results} 2>{errors}"
-    # print(f"Trying: {commande}")
-    returnCode = os.system(commande)
-    if returnCode == 0 and results.exists():
-        return read_jumble_results(results)
-    else:
-        return (0, 0)   # ignore this class.  Error should have already been printed?
+    args = ["java", "-cp", cp, "com.reeltwo.jumble.Jumble", clazz,test]
+    with open(results_path, "w") as results:
+        with open(output_dir / f"errorFile_{class_to_mutate}.txt", "w")as errors:
+            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc.communicate()
+            returnCode = proc.returncode
+            if returnCode == 0 and results_path.exists():
+                return read_jumble_results(results_path)
+            else:
+                return (0, 0)   # ignore this class.  Error should have already been printed?
 
 
 # %%
@@ -222,6 +227,9 @@ def main(args):
         start += 1
     csv_files = args[start:]
     if len(csv_files) > 0:
+        if len(csv_files) == 1 and "*" in csv_files[0]:
+            # expand this pattern, because Windows does not expand them by default!
+            csv_files = glob.glob(csv_files[0])
         data = run_experiments(csv_files)
         data.Percent = data.Percent.round(2)
         data.to_csv(Path(out_file).with_suffix(".csv"), index_label="Index")
@@ -243,6 +251,17 @@ def main(args):
         print(f"into *.class files.  See instructions at the top of this script for details.")
         print()
         print(f"Usage: python {script} [--out=FILE.csv] test50.csv test100.csv test150.csv ...")
+
+
+# %% TODO: add grouping if multiple experiments are for same size?
+
+def get_size(s: str) -> int:
+    """Get the size NNN from a string like 'name_NNN_etc.csv'. """
+    return int(s.split('_')[1])
+
+# datau['Size'] = datau.CSV.apply(get_size)
+# grp = datau.groupby('Size')
+# grp.Percent.mean().plot.line(yerr=grp.Percent.std(), ylim=(0,100))
 
 # %%
 
