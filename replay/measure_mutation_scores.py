@@ -252,6 +252,17 @@ def main(args):
         print()
         print(f"Usage: python {script} [--out=FILE.csv] test50.csv test100.csv test150.csv ...")
 
+
+# %% TODO: add grouping if multiple experiments are for same size?
+
+def get_size(s: str) -> int:
+    """Get the size NNN from a string like 'name_NNN_etc.csv'. """
+    return int(s.split('_')[1])
+
+# datau['Size'] = datau.CSV.apply(get_size)
+# grp = datau.groupby('Size')
+# grp.Percent.mean().plot.line(yerr=grp.Percent.std(), ylim=(0,100))
+
 # %%
 
 if __name__ == "__main__":
