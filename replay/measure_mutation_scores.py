@@ -19,7 +19,10 @@ NOTE: you need to run it in this directory, as the script relies on finding:
  * all the Scanette *.class files either in ../out/production/scanette (IntelliJ puts them there
    when you build the project) or in ../implem (if you compile them yourself with javac)
  * all the Scanette JUnit test *.class files either in ../out/test/scanette (IntelliJ)
-   or in ../tests (if you compile them yourself with javac)
+   or in ../tests, if you compile them yourself with javac, for example, as follows:
+                   cd implem; javac --release 8 fr/ufc/l3info/oprog/*.java
+                   cd tests; javac --release 8 -cp "../implem;../lib/*" fr/ufc/l3info/oprog/*.java
+    NOTE: if you are using Java 8 you can omit the --release 8)
 
 
 Created on Mon Apr 27 2020.
@@ -101,25 +104,89 @@ def executeCsvFile(csv_file: Path, jar_name: str, output_dir: Path) -> str:
 
 # %%
 
-def read_jumble_results(result_file: Path) -> Tuple[int, int]:
-    """Reads Jumble output and gets the number of mutants killed and total."""
-    output = result_file.read_text()
-    mutants_match = re.search("Mutation points = ([0-9]+),", output)
-    percent_match = re.search("Score: ([0-9]*)%", output)
+def parse_jumble_results(output: str, name: str) -> Tuple[int, int, str, List[str]]:
+    """Reads Jumble output and gets the number of mutants killed etc.
+
+    Returns a tuple (killed, mutants, result_string, error_list).
+
+    For example: (2, 7, "...M.T.", ["M Fail: pkg.Hello:130: - -> +"]).
+
+    Note that in the results string:
+        - '.' means that the mutant was killed (which is good).
+        - 'M' means the mutant was NOT detected (which is bad - inadequate tests)
+        - 'T' means timeout (which we usually treat the same as killed, ie. good)
+    For each 'M' failure, there will be a corresponding message in error_list.
+    """
+    mutants = 0
+    killed = 0
+    results = ""
+    errors = []
+    collecting_results = False
+    for line in output.split("\n"):
+        if line.startswith("Mutation points = "):
+            mutants = int(line.split(",")[0].split()[-1])
+            collecting_results = True
+            # print(f"start collecting with mutpoints={mutants}")
+        elif collecting_results:
+            alldots = re.search("^[T\.]*$", line)
+            killed = re.search("^[T\.]*M", line)
+            if alldots is not None:
+                results += alldots.group(0)
+                # print(f"results += '{alldots.group(0)}'")
+            elif killed is not None:
+                s = killed.group(0)
+                results += s
+                errmsg = line[len(s) - 1 : ]
+                # print(f"results += '{s}' with errmsg={errmsg}")
+                errors.append(errmsg)
+            else:
+                collecting_results = False
+                # print("stop collecting")
+        elif line.startswith("Score: "):
+            percent = int(line.split()[-1][:-1])  # take last word and drop the final '%'
+            # Note: This might be +/-1 if a large class has more than 100 mutants
+            killed1 = int( mutants * percent / 100.0 + 0.5 )
+            killed = len([c for c in results if c == '.'])
+            if killed != killed1:
+                print(f"Note: killed% rounding error corrected: {killed1} -> {killed}")
+            # print(f"percent={percent} so killed={killed} / {len(results)} results: {results}")
+        else:
+            pass
+            # print("ignoring:", line)
+    #mutants_match = re.search("Mutation points = ([0-9]+),", output)
+    #percent_match = re.search("Score: ([0-9]*)%", output)
     # print("mutants", mutants_match, " percent", percent_match)
-    if mutants_match and percent_match:
-        # Note: This might be +/-1 if a large class has more than 100 mutants
-        # The alternative is to parse all the Jumble output.
-        mutants = int(mutants_match.group(1))
-        percent = int(percent_match.group(1))
-        killed = int( mutants * percent / 100.0 + 0.5 )
-        return (killed, int(mutants))
+    if mutants > 0 and len(results) == mutants:
+        return (killed, mutants, results, errors)
     else:
-        print(f"\nWARNING: could not read Jumble results from {result_file}.")
-        return (0, 0)
+        err = f"Error: could not parse Jumble results from {name}, {killed}/{mutants} {results}"
+        print(err)
+        return (0, 0, "", [err])
 
 
-def run_jumble(csv_file: Path, class_to_mutate: str, output_dir: Path) -> int:
+def test_parse_jumble_results():
+    eg = """.......
+Mutating fr.Chaire
+Tests: fr.TestChaire
+Mutation points = 22, unit test time limit 2.22s
+....M FAIL: fr.Chair:56: & -> |
+........M FAIL: fr.Chaire:124: negated conditional
+....T..
+M FAIL: fr.ufc.l3info.oprog.MaCaisse:174: - -> +
+
+Jumbling took 27.349s
+Score: 82%
+
+    """
+    (k, m, r, errs) = parse_jumble_results(eg, "test")
+    assert k == 18
+    assert m == 22
+    assert r == "....M........M....T..M"
+    assert len(errs) == 3
+    assert errs[0] == "M FAIL: fr.Chair:56: & -> |"
+
+
+def run_jumble(csv_file, class_to_mutate, output_dir) -> Tuple[int, int, str, List[str]]:
     """Run Jumble on the given `class_to_mutate` with default mutation operators.
 
     Full Jumble output is saved in `<output_dir>/result_jumble_<class_to_mutate>.txt`.
@@ -139,9 +206,9 @@ def run_jumble(csv_file: Path, class_to_mutate: str, output_dir: Path) -> int:
             proc.communicate()
             returnCode = proc.returncode
             if returnCode == 0 and results_path.exists():
-                return read_jumble_results(results_path)
+                return parse_jumble_results(results_path.read_text(), str(results_path))
             else:
-                return (0, 0)   # ignore this class.  Error should have already been printed?
+                return (0, 0, "", [])   # ignore this class.  Error should have been printed?
 
 
 # %%
@@ -184,12 +251,12 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
             summary.append(result)
             if result in ["F", "X"]:
                 score += 1
-        print("".join(summary), end="")
+        summary_str = "".join(summary)
     else:
         print(f"  Jumble {name}: ", end="", flush=True)
-        (score, total) = run_jumble(csv_file, name, outdir)
+        (score, total, summary_str, _) = run_jumble(csv_file, name, outdir)
     end = time.perf_counter()
-    print(f" score={score}/{total}  [{end-start:.1f} secs]", flush=True)
+    print(f" score={score}/{total}  [{end-start:.1f} secs] {summary_str}", flush=True)
     return (score, total)
 
 
@@ -266,4 +333,5 @@ def get_size(s: str) -> int:
 # %%
 
 if __name__ == "__main__":
+    test_parse_jumble_results()
     main(sys.argv)
