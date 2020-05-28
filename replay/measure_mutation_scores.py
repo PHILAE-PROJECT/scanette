@@ -41,12 +41,16 @@ import os
 import subprocess
 import time
 import re
+import xml.etree.ElementTree as ET
 from typing import Tuple, List
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
 # %% Global defaults
+
+# True means use Jumble, False will use PITest (PIT) mutation tester.
+USE_JUMBLE = False
 
 # default output file (use --out=XXX.csv to override this)
 OUTPUT_FILE = "results.csv"
@@ -71,13 +75,18 @@ CLASSPATH_SEP = ";" if os.name == "nt" else ":"
 # %% Functions copied from Yves' ExecuteTraceOpti.py script.
 
 def retChar(returnCode: int) -> str:
-    """Computes a result character corresponding to the Java return code."""
+    """Computes a result character corresponding to the Java return code.
+
+    Return characters changed to be consistent with other mutation testing tools.
+    So '.' means good (the mutant was killed), while 'S' means it Survived (bad).
+    Also 'r' means runtime error, which should be included in the killed total.
+    """
     if returnCode == 0:
-        rc = "."
+        rc = "S"  # Survived
     elif returnCode == 1:
-        rc = "F"
+        rc = "."  # killed
     elif returnCode in [-1, 255, 4294967295]:  # -1 as int, uint8, or uint32.
-        rc = "X"
+        rc = "r"  # runtime error (we count this as killed)
     else:
         rc = "?"
         print(f"The Java program return code was not 0, 1 or -1, but was {returnCode}")
@@ -85,11 +94,11 @@ def retChar(returnCode: int) -> str:
         print("Maybe the class path should be modified.")
     return rc
 
-def executeCsvFile(csv_file: Path, jar_name: str, output_dir: Path) -> str:
+def executeCsvFile(jar_name: str, csv_file: Path, output_dir: Path) -> str:
     """Execute jar_name (typically a mutant) on test case csv_file.
 
-    Returns a letter corresponding to the return code ('F' means test failed = mutant killed.)
-    Detailed return messages are stored in resultFile and errorFile
+    Returns a letter corresponding to the return code ('.' means mutant was killed.)
+    Detailed results (stdout and stderr) are stored in `output_dir` directory.
     """
     jars = [jar_name] + otherJarsNames
     cp = CLASSPATH_SEP.join(jars)
@@ -186,12 +195,14 @@ Score: 82%
     assert errs[0] == "M FAIL: fr.Chair:56: & -> |"
 
 
-def run_jumble(csv_file, class_to_mutate, output_dir) -> Tuple[int, int, str, List[str]]:
+def run_jumble(class_to_mutate: str, csv_file: Path,
+               output_dir: Path) -> Tuple[int, int, str, List[str]]:
     """Run Jumble on the given `class_to_mutate` with default mutation operators.
 
     Full Jumble output is saved in `<output_dir>/result_jumble_<class_to_mutate>.txt`.
 
-    Returns the number of mutants that were detected.
+    Returns a tuple `(killed, mutants, result_string, error_list)`.
+    See `parse_jumble_results` for details.
     """
     # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
     shutil.copyfile(csv_file, Path("tests.csv"))
@@ -210,6 +221,106 @@ def run_jumble(csv_file, class_to_mutate, output_dir) -> Tuple[int, int, str, Li
             else:
                 return (0, 0, "", [])   # ignore this class.  Error should have been printed?
 
+# %%
+
+def mut_name(mutation: ET.Element) -> str:
+    clazz = mutation.find('mutatedClass').text.split(".")[-1]
+    line = int(mutation.find('lineNumber').text)
+    index = int(mutation.find('index').text)
+    return f"{clazz}:{line:04d}:{index:03d}"
+
+
+# lowercase chars (including '.') mean we count it as killed.
+mut_char = {
+    "KILLED": '.',
+    "SURVIVED": 'S',
+    "NO_COVERAGE": 'N',
+    "TIMED_OUT": 't',
+    "MEMORY_ERROR": 'm',
+    "RUN_ERROR": 'r'
+    }
+
+
+def parse_pitest_xml(root: ET.ElementTree) -> Tuple[int, int, str, List[str], List[str]]:
+    """Similar to parse_jumble_results, but returns all names and descriptions.
+
+    Returns a 5-tuple (killed, mutants, result_string, names, descriptions):
+    where:
+        - `killed` is the number of mutants killed.
+        - `mutants` is the total number of mutants generated.
+        - `result_string` is one character for each mutant result: '.' means killed by a test,
+          't' means timed out, 'm' means memory error, 'r' means runtime error,
+          'N' means tests did not cover the mutated line at all, and 'S' means survived.
+          Note that 'N' and 'S' are bad results, all other results are counted in killed.
+        - `names` is a list of names for all the mutants, of the form ClassName:LineNum:Offset.
+        - `descriptions` contains a brief description for each mutant.
+    """
+    result_str = "".join([mut_char.get(mut.attrib['status'], "?") for mut in root])
+    names = [mut_name(mut) for mut in root]
+    descriptions = [mut.find('description').text for mut in root]
+    # print("results:", result_str, names, descriptions)
+    killed = sum([result_str.count(ch) for ch in ".tmr"])
+    return (killed, len(result_str), result_str, names, descriptions)
+
+
+def test_parse_pitest_xml():
+    xml_str = """<?xml version="1.0" encoding="UTF-8"?>
+    <mutations>
+      <mutation detected='true' status='KILLED' numberOfTestsRun='1'><sourceFile>MaCaisse.java</sourceFile><mutatedClass>fr.ufc.l3info.oprog.MaCaisse</mutatedClass><mutatedMethod>&#60;init&#62;</mutatedMethod><methodDescription>(Ljava/lang/String;)V</methodDescription><lineNumber>27</lineNumber><mutator>org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator</mutator><index>27</index><block>2</block><killingTest>fr.ufc.l3info.oprog.TestCsv.testAllWithCsv(fr.ufc.l3info.oprog.TestCsv)</killingTest><description>removed call to fr/ufc/l3info/oprog/ArticleDB::init</description></mutation>
+      <mutation detected='false' status='NO_COVERAGE' numberOfTestsRun='0'><sourceFile>MaCaisse.java</sourceFile><mutatedClass>fr.ufc.l3info.oprog.MaCaisse</mutatedClass><mutatedMethod>abandon</mutatedMethod><methodDescription>()V</methodDescription><lineNumber>113</lineNumber><mutator>org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator</mutator><index>5</index><block>0</block><killingTest/><description>removed call to java/util/HashMap::clear</description></mutation>
+      <mutation detected='false' status='SURVIVED' numberOfTestsRun='1'><sourceFile>MaCaisse.java</sourceFile><mutatedClass>fr.ufc.l3info.oprog.MaCaisse</mutatedClass><mutatedMethod>connexion</mutatedMethod><methodDescription>(Lfr/ufc/l3info/oprog/Scanette;)I</methodDescription><lineNumber>56</lineNumber><mutator>org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator</mutator><index>36</index><block>10</block><killingTest/><description>changed conditional boundary</description></mutation>
+    </mutations>
+    """
+    xml = ET.fromstring(xml_str)
+    (k, m, r, names, descs) = parse_pitest_xml(xml)
+    assert k == 1
+    assert m == 3
+    assert r == ".NS"
+    assert len(names) == 3
+    assert len(descs) == 3
+    assert names[0] == 'MaCaisse:0027:027'  # ClassName:Line:Offset
+    assert descs[2] == 'changed conditional boundary'
+
+
+def run_pitest(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int, str, List[str], List[str]]:
+    """Run PITest mutation tester on Java class `name` with default mutation operators.
+
+    Full PITest output is saved in `<output_dir>/pitest/*`.
+
+    Returns a 5-tuple `(killed, mutants, result_string, mutant_names, mutant_descriptions)`.
+    See `parse_pitest_xml` for details.
+    """
+    # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
+    shutil.copyfile(csv_file, Path("tests.csv"))
+    cp = CLASSPATH_SEP.join(otherJarsNames)
+    results_dir = outdir / f"pitest_{name}"
+    results_dir.mkdir(exist_ok=True)
+    clazz = PACKAGE + name
+    test = PACKAGE + "TestCsv"
+    args = ["java", "-cp", cp,
+            "org.pitest.mutationtest.commandline.MutationCoverageReport",
+            f"--reportDir={str(results_dir)}",
+            f"--targetClasses={clazz}",
+            f"--targetTests={test}",
+            f"--sourceDirs=../implem,../tests",
+            f"--outputFormats=HTML,XML",
+            f"--timestampedReports=false",
+            f"--fullMutationMatrix=false"
+            ]
+    with open(results_dir / "stdout.txt", "w") as results:
+        with open(results_dir / "stderr.txt", "w") as errors:
+            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc.communicate()
+            returnCode = proc.returncode
+            out_xml = results_dir / "mutations.xml"
+            if returnCode == 0 and out_xml.exists():
+                tree = ET.parse(out_xml)
+                root = tree.getroot()
+                return parse_pitest_xml(root)
+            else:
+                print(f"ERROR running pitest on {name}, return status={returnCode}")
+                return (0, 0, "", [], [])
+
 
 # %%
 
@@ -221,7 +332,7 @@ def output_directory(csv_file: Path) -> Path:
     return outdir
 
 
-def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
+def run_mutants(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int]:
     """
     Measure the various mutation scores with the given CSV test suite.
 
@@ -232,7 +343,7 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
     csv_file : Path
         The input file of traces to use as test data.
     outdir : Path
-        Directory to save detailed results into.
+        Directory to save detailed results into (must exist already).
 
     Returns
     -------
@@ -247,14 +358,17 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> int:
         summary = []
         for m in range(1, total + 1):
             mutant = f"scanette-mu{m}.jar"
-            result = executeCsvFile(csv_file, mutant, outdir)
+            result = executeCsvFile(mutant, csv_file, outdir)
             summary.append(result)
-            if result in ["F", "X"]:
+            if result in [".", "r"]:
                 score += 1
         summary_str = "".join(summary)
+    elif USE_JUMBLE:
+        print(f"  Jumble-{name}: ", end="", flush=True)
+        (score, total, summary_str, _) = run_jumble(name, csv_file, outdir)
     else:
-        print(f"  Jumble {name}: ", end="", flush=True)
-        (score, total, summary_str, _) = run_jumble(csv_file, name, outdir)
+        print(f"  PITest-{name}: ", end="", flush=True)
+        (score, total, summary_str, _, _) = run_pitest(name, csv_file, outdir)
     end = time.perf_counter()
     print(f" score={score}/{total}  [{end-start:.1f} secs] {summary_str}", flush=True)
     return (score, total)
@@ -334,4 +448,5 @@ def get_size(s: str) -> int:
 
 if __name__ == "__main__":
     test_parse_jumble_results()
+    test_parse_pitest_xml()
     main(sys.argv)
