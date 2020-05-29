@@ -241,6 +241,11 @@ mut_char = {
     }
 
 
+def killed(results: str) -> int:
+    """Count how many mutants were killed, given the results summary string."""
+    return sum([results.count(ch) for ch in ".tmr"])
+
+
 def parse_pitest_xml(root: ET.ElementTree) -> Tuple[int, int, str, List[str], List[str]]:
     """Similar to parse_jumble_results, but returns all names and descriptions.
 
@@ -259,8 +264,7 @@ def parse_pitest_xml(root: ET.ElementTree) -> Tuple[int, int, str, List[str], Li
     names = [mut_name(mut) for mut in root]
     descriptions = [mut.find('description').text for mut in root]
     # print("results:", result_str, names, descriptions)
-    killed = sum([result_str.count(ch) for ch in ".tmr"])
-    return (killed, len(result_str), result_str, names, descriptions)
+    return (killed(result_str), len(result_str), result_str, names, descriptions)
 
 
 def test_parse_pitest_xml():
@@ -282,7 +286,8 @@ def test_parse_pitest_xml():
     assert descs[2] == 'changed conditional boundary'
 
 
-def run_pitest(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int, str, List[str], List[str]]:
+def run_pitest(name: str, csv_file: Path, outdir: Path,
+               cwd: Path = None) -> Tuple[int, int, str, List[str], List[str]]:
     """Run PITest mutation tester on Java class `name` with default mutation operators.
 
     Full PITest output is saved in `<output_dir>/pitest/*`.
@@ -291,7 +296,13 @@ def run_pitest(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int, str, 
     See `parse_pitest_xml` for details.
     """
     # The JUnit rerun adapter (TestCsv) requires input to be in "tests.csv".
-    shutil.copyfile(csv_file, Path("tests.csv"))
+    csv_dest = Path("tests.csv") if cwd is None else cwd / "tests.csv"
+    try:
+        shutil.copyfile(csv_file, csv_dest)
+        # print(f"  copied {csv_file.resolve()} to {csv_dest.resolve()}")
+    except shutil.SameFileError:
+        # print(f"  no need to copy {csv_file.resolve()}")
+        pass
     cp = CLASSPATH_SEP.join(otherJarsNames)
     results_dir = outdir / f"pitest_{name}"
     results_dir.mkdir(exist_ok=True)
@@ -309,7 +320,7 @@ def run_pitest(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int, str, 
             ]
     with open(results_dir / "stdout.txt", "w") as results:
         with open(results_dir / "stderr.txt", "w") as errors:
-            proc = subprocess.Popen(args, stderr=errors, stdout=results)
+            proc = subprocess.Popen(args, stderr=errors, stdout=results, cwd=cwd)
             proc.communicate()
             returnCode = proc.returncode
             out_xml = results_dir / "mutations.xml"
