@@ -223,11 +223,11 @@ def run_jumble(class_to_mutate: str, csv_file: Path,
 
 # %%
 
-def mut_name(mutation: ET.Element) -> str:
+def mut_name(mutation: ET.Element, pos: int) -> str:
+    """Returns a unique name for this mutant, assuming that `pos` is unique."""
     clazz = mutation.find('mutatedClass').text.split(".")[-1]
     line = int(mutation.find('lineNumber').text)
-    index = int(mutation.find('index').text)
-    return f"{clazz}:{line:04d}:{index:03d}"
+    return f"{clazz}:{line:04d}:{pos:03d}"
 
 
 # lowercase chars (including '.') mean we count it as killed.
@@ -261,7 +261,7 @@ def parse_pitest_xml(root: ET.ElementTree) -> Tuple[int, int, str, List[str], Li
         - `descriptions` contains a brief description for each mutant.
     """
     result_str = "".join([mut_char.get(mut.attrib['status'], "?") for mut in root])
-    names = [mut_name(mut) for mut in root]
+    names = [mut_name(mut, i) for i,mut in enumerate(root)]
     descriptions = [mut.find('description').text for mut in root]
     # print("results:", result_str, names, descriptions)
     return (killed(result_str), len(result_str), result_str, names, descriptions)
@@ -282,7 +282,8 @@ def test_parse_pitest_xml():
     assert r == ".NS"
     assert len(names) == 3
     assert len(descs) == 3
-    assert names[0] == 'MaCaisse:0027:027'  # ClassName:Line:Offset
+    assert names[0] == 'MaCaisse:0027:000'  # ClassName:Line:MutantNumber
+    assert names[2] == 'MaCaisse:0056:002'  # ClassName:Line:MutantNumber
     assert descs[2] == 'changed conditional boundary'
 
 
