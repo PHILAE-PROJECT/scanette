@@ -52,6 +52,9 @@ import matplotlib.pyplot as plt
 # True means use Jumble, False will use PITest (PIT) mutation tester.
 USE_JUMBLE = False
 
+# If True, then analyse and graph previous results.csv file instead of generating it.
+ANALYSE_PREVIOUS_RESULTS = False
+
 # default output file (use --out=XXX.csv to override this)
 OUTPUT_FILE = "results.csv"
 
@@ -71,6 +74,7 @@ otherJarsNames = [
 
 CLASSPATH_SEP = ";" if os.name == "nt" else ":"
 
+PITEST_RESULT = Tuple[int, int, str, List[str], List[str]]
 
 # %% Functions copied from Yves' ExecuteTraceOpti.py script.
 
@@ -246,7 +250,7 @@ def killed(results: str) -> int:
     return sum([results.count(ch) for ch in ".tmr"])
 
 
-def parse_pitest_xml(root: ET.ElementTree) -> Tuple[int, int, str, List[str], List[str]]:
+def parse_pitest_xml(root: ET.ElementTree) -> PITEST_RESULT:
     """Similar to parse_jumble_results, but returns all names and descriptions.
 
     Returns a 5-tuple (killed, mutants, result_string, names, descriptions):
@@ -288,7 +292,7 @@ def test_parse_pitest_xml():
 
 
 def run_pitest(name: str, csv_file: Path, outdir: Path,
-               cwd: Path = None) -> Tuple[int, int, str, List[str], List[str]]:
+               cwd: Path = None) -> PITEST_RESULT:
     """Run PITest mutation tester on Java class `name` with default mutation operators.
 
     Full PITest output is saved in `<output_dir>/pitest/*`.
@@ -410,6 +414,48 @@ def run_experiments(csv_files: List[str]) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+# %% Analyse and graph the results (raw and grouped)
+
+def get_size(s: str) -> int:
+    """Get the size NNN from a string like 'name_NNN_etc.csv'. """
+    return int(s.split('_')[1])
+
+
+def get_short_name(filename: str) -> int:
+    """Get a shorter filename NNN_YY from a string like 'dir/name_NNN_YY.csv'. """
+    path = Path(filename)
+    parts = path.stem.split('_')
+    if len(parts) >= 2:
+        return "_".join(parts[1:])
+    else:
+        return path.stem
+
+
+def graph_mutation_scores(data: pd.DataFrame, out_file: Path) -> None:
+    """Graph the mutation scores, in detail and grouped by `get_size`."""
+    engine = "Jumble" if USE_JUMBLE else "PiTest"
+    data["ByHand"] = 100.0 * data.Hand / HAND_MUTANTS
+    data[engine] = 100.0 * (data.MaCaisse + data.Scanette) / (data.Total - HAND_MUTANTS)
+    data["Total"] = data.Percent
+    data["Group"] = data.CSV.apply(get_size)
+    data["Name"] = data.CSV.apply(get_short_name)
+    # columns = ["Total", "ByHand", engine]
+    columns = engine  # just one column
+    data.plot.line(x="Name", y=columns, ylim=(0,100))
+    graph1 = Path(out_file).with_suffix(".raw.png")
+    plt.savefig(graph1)
+    print(f"Wrote raw graph into {graph1}")
+    plt.clf()
+    # plt.show()
+    grp = data.groupby('Group')
+    # grp.ByHand.mean().plot.line(yerr=grp.ByHand.std(), ylim=(0,100))
+    grp[engine].mean().plot.line(yerr=grp[engine].std(), ylim=(0,100))
+    # plt.legend()
+    graph2 = Path(out_file).with_suffix(".mean.png")
+    plt.savefig(graph2)
+    print(f"Wrote mean graph into {graph2}")
+
+
 # %% Measure mutation scores for the given test suites.
 
 def main(args):
@@ -423,16 +469,16 @@ def main(args):
         if len(csv_files) == 1 and "*" in csv_files[0]:
             # expand this pattern, because Windows does not expand them by default!
             csv_files = glob.glob(csv_files[0])
-        data = run_experiments(csv_files)
-        data.Percent = data.Percent.round(2)
-        data.to_csv(Path(out_file).with_suffix(".csv"), index_label="Index")
+        out_path = Path(out_file).with_suffix(".csv")
+        if ANALYSE_PREVIOUS_RESULTS:
+            print(f"Reading previous results from {out_path}")
+            data = pd.read_csv(out_path)
+        else:
+            data = run_experiments(csv_files)
+            data.Percent = data.Percent.round(2)
+            data.to_csv(out_path, index_label="Index")
         # just for fun we also plot the hand and jumble percentages
-        data["ByHand"] = 100.0 * data.Hand / HAND_MUTANTS
-        data["Jumble"] = 100.0 * (data.MaCaisse + data.Scanette) / (30 + 26)
-        data["Total"] = data.Percent
-        data.plot.line(x="CSV", y=["Total", "ByHand", "Jumble"], ylim=(0,100))
-        plt.savefig(Path(out_file).with_suffix(".png"))
-        # plt.show()
+        graph_mutation_scores(data, out_file)
     else:
         script = sys.argv[0] or "measure_mutation_scores.py"
         print(f"This script takes CSV files containing test suites of Scanette traces,")
@@ -445,16 +491,6 @@ def main(args):
         print()
         print(f"Usage: python {script} [--out=FILE.csv] test50.csv test100.csv test150.csv ...")
 
-
-# %% TODO: add grouping if multiple experiments are for same size?
-
-def get_size(s: str) -> int:
-    """Get the size NNN from a string like 'name_NNN_etc.csv'. """
-    return int(s.split('_')[1])
-
-# datau['Size'] = datau.CSV.apply(get_size)
-# grp = datau.groupby('Size')
-# grp.Percent.mean().plot.line(yerr=grp.Percent.std(), ylim=(0,100))
 
 # %%
 
