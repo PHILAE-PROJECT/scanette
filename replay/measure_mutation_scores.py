@@ -52,6 +52,9 @@ import matplotlib.pyplot as plt
 # True means use Jumble, False will use PITest (PIT) mutation tester.
 USE_JUMBLE = False
 
+# True means do all the hand-mutations, False will skip them (and save time)
+USE_HAND = False
+
 # If True, then analyse and graph previous results.csv file instead of generating it.
 ANALYSE_PREVIOUS_RESULTS = False
 
@@ -371,14 +374,17 @@ def run_mutants(name: str, csv_file: Path, outdir: Path) -> Tuple[int, int]:
         print(f"  {name}-mutants: ", end="", flush=True)
         score = 0
         total = HAND_MUTANTS
-        summary = []
-        for m in range(1, total + 1):
-            mutant = f"scanette-mu{m}.jar"
-            result = executeCsvFile(mutant, csv_file, outdir)
-            summary.append(result)
-            if result in [".", "r"]:
-                score += 1
-        summary_str = "".join(summary)
+        if USE_HAND:
+            summary = []
+            for m in range(1, total + 1):
+                mutant = f"scanette-mu{m}.jar"
+                result = executeCsvFile(mutant, csv_file, outdir)
+                summary.append(result)
+                if result in [".", "r"]:
+                    score += 1
+            summary_str = "".join(summary)
+        else:
+            summary_str = "(skipped)"
     elif USE_JUMBLE:
         print(f"  Jumble-{name}: ", end="", flush=True)
         (score, total, summary_str, _) = run_jumble(name, csv_file, outdir)
@@ -418,7 +424,11 @@ def run_experiments(csv_files: List[str]) -> pd.DataFrame:
 
 def get_size(s: str) -> int:
     """Get the size NNN from a string like 'name_NNN_etc.csv'. """
-    return int(s.split('_')[1])
+    parts = s.split('_')
+    if len(parts) >= 3:
+        return int(parts[1])
+    else:
+        return s  # give up
 
 
 def get_short_name(filename: str) -> int:
@@ -448,8 +458,8 @@ def graph_mutation_scores(data: pd.DataFrame, out_file: Path) -> None:
     plt.clf()
     # plt.show()
     grp = data.groupby('Group')
-    # grp.ByHand.mean().plot.line(yerr=grp.ByHand.std(), ylim=(0,100))
-    grp[engine].mean().plot.line(yerr=grp[engine].std(), ylim=(0,100))
+    # grp.ByHand.mean().plot.line(yerr=grp.ByHand.std(), ylim=(0,100), capsize=4)
+    grp[engine].mean().plot.line(yerr=grp[engine].std(), ylim=(0,100), capsize=4)
     # plt.legend()
     graph2 = Path(out_file).with_suffix(".mean.png")
     plt.savefig(graph2)
@@ -468,7 +478,11 @@ def main(args):
     if len(csv_files) > 0:
         if len(csv_files) == 1 and "*" in csv_files[0]:
             # expand this pattern, because Windows does not expand them by default!
-            csv_files = glob.glob(csv_files[0])
+            patt = csv_files[0]
+            csv_files = glob.glob(patt)
+            if len(csv_files) == 0:
+                print(f"Error: no files match pattern {patt}")
+                sys.exit(2)
         out_path = Path(out_file).with_suffix(".csv")
         if ANALYSE_PREVIOUS_RESULTS:
             print(f"Reading previous results from {out_path}")
