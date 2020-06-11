@@ -29,7 +29,7 @@ import agilkia
 
 # %% Global defaults
 
-# base name of all the output *.csv files
+# base name of all the output *.csv/*.json files (in same directory as input file)
 OUTPUT = "testsuite"
 
 # %% Scanette CSV-writing functions from agilkia/examples/scanner/write_scanette.py
@@ -124,7 +124,7 @@ def generate_suite(traces: agilkia.TraceSet, max_steps: int, output: Path,
 
 
 def generate_suites(traceset: agilkia.TraceSet, sizes: Iterator[int], num_repeats: int,
-                    rand: Random, scanette=False) -> None:
+                    rand: Random, outdir: Path, scanette=False) -> None:
     """
     Generates output test suites of various sizes by selecting from each cluster.
 
@@ -138,6 +138,8 @@ def generate_suites(traceset: agilkia.TraceSet, sizes: Iterator[int], num_repeat
         How many random versions of each size to generate.
     rand: random.Random
         The random number generator used for choosing traces from each cluster.
+    outdir: Path
+        The directory to put the output files into.
     scanette: bool
         If True then output to Scanette *.csv, else output to (Agilkia format) *.json.
 
@@ -149,7 +151,7 @@ def generate_suites(traceset: agilkia.TraceSet, sizes: Iterator[int], num_repeat
     for size in sizes:
         print("")
         for i in range(num_repeats):
-            output = Path(f"{OUTPUT}_{size:03d}_{i:02d}.{extn}")
+            output = outdir / f"{OUTPUT}_{size:03d}_{i:02d}.{extn}"
             # print(f"generating {output}...")
             suite = generate_suite(traceset, size, output, rand)
             # do a final shuffle to increase entropy and avoid ordering biases.
@@ -180,17 +182,19 @@ def main(args):
     if len(input_files) == 1:
         input = Path(input_files[0])
         traceset = agilkia.TraceSet.load_from_json(input)
+        rand = Random(seed)
+        suites = range(50, 351, 50)
         if traceset.is_clustered():
-            rand = Random()
-            if seed is not None:
-                rand.seed(seed)
             nclusters = max(traceset.get_clusters()) + 1
             sizes = [len(traceset.get_cluster(i)) for i in range(nclusters)]
             sizestr = " ".join([str(c) for c in sizes])
             print(f"read {input}: {len(traceset)} traces with {nclusters} clusters: {sizestr}")
-            generate_suites(traceset, range(50, 351, 50), num_repeats, rand, scanette)
         else:
-            print(f"Error: input traces {input} must be clustered.")
+            # not clustered, so we treat whole suite as one big cluster.
+            traceset.set_clusters([0 for i in traceset])
+            print(f"WARNING: {input} is not clustered, so treating all traces as one cluster.")
+            print(f"This can be useful as a null-hypothesis experiment: 'clusters do not help'!")
+        generate_suites(traceset, suites, num_repeats, rand, input.parent, scanette)
     else:
         script = sys.argv[0] or "make_cluster_experiments.py"
         print(f"""
