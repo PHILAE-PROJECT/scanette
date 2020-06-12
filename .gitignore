@@ -1,0 +1,5 @@
+*.class
+*.csv
+*.json
+__pycache__
+tmp.pitest.dir
