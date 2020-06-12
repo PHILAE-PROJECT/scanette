@@ -470,7 +470,7 @@ def graph_mutation_scores(data: pd.DataFrame, out_file: Path) -> None:
 
 def main(args):
     start = 1
-    out_file = OUTPUT_FILE
+    out_file = None
     if start < len(args) and args[start].startswith("--out="):
         out_file = args[start].split("=")[1]
         start += 1
@@ -483,23 +483,26 @@ def main(args):
             if len(csv_files) == 0:
                 print(f"Error: no files match pattern {patt}")
                 sys.exit(2)
-        out_path = Path(out_file).with_suffix(".csv")
+        if out_file is None:
+            out_csv = Path(csv_files[0]).parent / OUTPUT_FILE
+        else:
+            out_csv = Path(out_file).with_suffix(".csv")
         if ANALYSE_PREVIOUS_RESULTS:
-            print(f"Reading previous results from {out_path}")
-            data = pd.read_csv(out_path)
+            print(f"Reading previous results from {out_csv}")
+            data = pd.read_csv(out_csv)
         else:
             data = run_experiments(csv_files)
             data.Percent = data.Percent.round(2)
-            data.to_csv(out_path, index_label="Index")
+            data.to_csv(out_csv, index_label="Index")
         # just for fun we also plot the hand and jumble percentages
-        graph_mutation_scores(data, out_file)
+        graph_mutation_scores(data, out_csv)
     else:
         script = sys.argv[0] or "measure_mutation_scores.py"
         print(f"This script takes CSV files containing test suites of Scanette traces,")
         print(f"then runs each test suite against all mutants, including Jumble mutants.")
         print(f"The resulting mutation scores are saved into a *.csv file for later analysis.")
         print(f"It also graphs the mutation scores into an output *.png graph.")
-        print(f"The default output file names are {OUTPUT_FILE}/.png.")
+        print(f"The default output file names are {OUTPUT_FILE}/.png (in the input directory).")
         print(f"NOTE that you need all the *.java files in ../implem and ../tests compiled")
         print(f"into *.class files.  See instructions at the top of this script for details.")
         print()
