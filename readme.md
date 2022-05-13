@@ -32,14 +32,7 @@ Formats existants (accessibles en complétant l'url précédente par &for=format
 - par défaut : `1553593429994: scan2.debloquer() -> 0`
 
 
-## Il resterait à faire...
-
-Pour faire la chaîne de bout en bout, il resterait à faire des traducteurs tests vers traces ou traces vers tests de façon à pouvoir rejouer des tests qui seraient issus d'une exploitation des traces. 
-
-
 ## Réutilisation 
 
 La licence suivante s'applique : CC-NC-ND-4.0
 This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-Dans la mesure du possible, je souhaiterais que cet exemple reste utilisé uniquement dans le cadre direct du projet. Merci de me contacter si vous souhaitez l'utiliser à d'autres fins. 
