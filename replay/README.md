@@ -55,13 +55,3 @@ sous Linux/MacOS et
 sous Windows. 
 
 On change juste le fichier JAR de la scanette dans le classpath, le reste est inchangé (donc on passe aussi bien du JSON que du CSV si vous avez bien tout suivi).
-
-
-# Remarques 
-
-Un fichier d'exemple CSV est fourni dans le dossier pour vous permettre de tester. Normalement il passe sans problème.
-
-Pour les JSON d'Agilkia je me suis basé sur l'exemple de format que m'avait envoyé Nicolas. S'il y a des soucis qui ne semblent pas normaux (typiquement en cas d'échec du test une exception Junit est levée), vous pouvez m'envoyer par mail votre exemple et je tâcherai de faire une correction sur le programme -- dans la limite de mon temps disponible (télétravail ne signifiant pas "être H24 sur son ordi prêt à répondre aux sollications" contrairement à ce que certains semblent penser). 
-
-
-#restezchezvous
